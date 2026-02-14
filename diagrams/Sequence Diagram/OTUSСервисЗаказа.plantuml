@@ -1,0 +1,179 @@
+@startuml Complete Order Process
+title Оформление заказа
+autonumber
+
+actor "Клиент" as Client
+boundary "Табло" as Display
+boundary "Приложение" as App
+boundary "API Gateway" as Gateway
+entity "Сервис\n Авторизации" as Auth
+entity "Сервис\n Меню" as Menu
+entity "Сервис\n Заказов" as Orders
+entity "Бонусная\n Система" as Bonus
+entity "Сервис\n Оплаты" as Payment
+participant "Банковская\n Система" as Bank
+participant "Фискальный\n Терминал" as Fiscal
+queue "Брокер\n Сообщений" as Broker
+participant "Сервис\n Уведомлений" as Notifications
+participant "Сервис\n Статистики" as Statistics
+participant "Роботизированный\n Комплекс" as Robotics
+
+box "Фронтенд" #LightBlue
+    participant App
+end box
+
+box "Бэкенд (Синхронные вызовы)" #LightGreen
+    participant Gateway
+    participant Auth
+    participant Menu
+    participant Orders
+    participant Bonus
+    participant Payment
+end box
+
+box "Внешние системы" #LightPink
+    participant Bank
+    participant Fiscal
+end box
+
+box "Бэкенд (Асинхронная обработка)" #LightYellow
+    queue Broker
+    participant Notifications
+    participant Statistics
+    participant Robotics
+end box
+
+
+== 1. Просмотр меню ==
+
+Client -> App++: Открыть меню
+loop выполнять при смене категории товаров в меню
+    App -> Gateway++: GET /api/menu/categories
+    Gateway -> Menu++: GET /internal/menu/categories
+    Menu --> Gateway: Список категорий и товаров
+    Gateway --> App: 200 OK + меню
+end
+App --> Client++: Просмотр меню
+
+== 2. Создание заказа ==
+
+Client -> App: Добавить товары в корзину
+App -> Gateway: POST /api/orders/create\n{items: [id:001,qty:1]}
+Gateway -> Orders++: POST /internal/orders/create\n{items: [id:001,qty:1]}
+group проверка наличия товара в меню
+    Orders -> Menu: GET /internal/menu/availability\n{items: [id:001,qty:1]}
+        alt Товар отсутвует
+        Menu --> Orders: Товары не доступны
+        else Товар доступен к заказу
+        Menu --> Orders--: Товары доступны\nцена: [id:001,price:500]
+        end
+end
+Orders --> Gateway: Заказ создан №001\n{total: 500}
+Gateway --> App: 201 Created\n{orderId: 001, total: 500}
+App --> Client: Товар добавлен в корзину
+
+== 3. Процесс оплаты ==
+
+Client -> App: Подтверждение оплаты\n{cardToken: "tok_xxx"}
+    opt опционально
+        ref over App, Auth
+        Авторизация
+        end ref     
+    end
+
+    opt опционально
+        ref over App, Bonus
+        Списание бонусов
+        end ref     
+    end
+
+App -> Gateway: POST /api/orders/001/payment\n{cardToken: "tok_xxx"}
+Gateway -> Payment++: POST /internal/payment/process\n{orderId: 001, amount: 500, cardToken: "tok_xxx"}
+
+group проверка наличия товара в меню
+    Payment -> Robotics: GET /internal/menu/availability
+        alt Товар отсутвует
+        Robotics --> Payment: Товары не доступны
+        else Товар доступен к заказу
+        Robotics --> Payment: Товары доступны
+        Payment -> Robotics: POST /internal/robotics/ingridients\n{orderId: 001, amount: 500, cardToken: "tok_xxx"}
+        Robotics --> Payment: 200 Reserved\n{orderId: 001, total: 500}
+        end
+end
+
+
+Payment -> Bank++: POST /transactions\n{amount: 500, cardToken: "tok_xxx", orderId: 001}
+alt банковский сервис не доступен
+    Bank --> Payment: Транзакция abord\ntrxId: "trx_123"
+    else банковский сервис доступен
+    Bank --> Payment--: Транзакция approved\ntrxId: "trx_123"
+end
+Payment -> Fiscal++: POST /receipts\n{orderId: 001, amount: 500}
+alt отмена операции
+    Fiscal --> Payment: Отмена операции\nfiscalId: "fn_456"
+    else операция подтверждена
+    Fiscal --> Payment--: Чек зарегистрирован\nfiscalId: "fn_456"
+end
+Payment --> Gateway--: Оплата успешна\n{trxId: "trx_123", fiscalId: "fn_456"}
+Gateway -> Orders: PUT /internal/orders/001/status\n{status: "paid"}
+Orders ->> Broker++: publish OrderPaidEvent\n{orderId: 001, userId: 123, amount: 400, bonusUsed: 100}
+Orders --> Gateway: Статус обновлен
+Gateway --> App: 201 Paid\n{orderId: 001, total: 500}
+App --> Client: Оплачено
+
+== 4. Приготовление блюда и выдача заказа ==
+
+Broker ->> Robotics++: consume OrderPaidEvent
+Robotics ->> Robotics: Запуск приготовления\nпо технологической карте
+loop обновление статуса заказа
+    Robotics --> Robotics: Статус
+    end
+
+group Установка SSE соединения (синхронно)
+    Display -> Gateway: GET /api/display/events\nAccept: text/event-stream
+    Gateway -> Orders: subscribeToSSE(Display)
+    Orders -> Orders: Добавить Display в список подписчиков
+    Orders --> Gateway: 200 OK
+    Gateway --> Display: HTTP/1.1 200 OK\nContent-Type: text/event-stream
+end
+
+loop публикация статуса (асинхронно)
+    Robotics -->> Broker--: publish OrderReadyEvent\n{orderId: 001, readyTime: "18:45"}
+    Broker ->> Orders: consume OrderReadyEvent
+    Orders -->> Display: order_update\ndata: {"orderId": "001", "status": "ready"}
+    end
+Broker ->> Orders: PUT /api/orders/001/status
+
+== 5. Уведомления пользователя через приложение ==
+
+Broker ->> Notifications++: consume OrderPaidEvent
+Notifications ->> Notifications: Подготовка уведомлений
+
+loop Запрос на получение статуса
+    Client ->> Notifications: short polling статус заказа
+    Notifications -->> Client--: Push \n"Заказ №001 готов. Списано 100 бонусов."
+end
+
+== 7. Обогащение статистическими данными ==
+
+loop после регистрации нового заказа
+    Broker -> Statistics++: consume OrderCompletedEvent
+    Statistics -> Statistics: Обновить метрики завершенных заказов
+end
+group Постоянная обработка событий
+    Broker -> Statistics: consume OrderCreatedEvent
+    Statistics -> Statistics: +1 к новым заказам
+    
+    Broker -> Statistics: consume OrderPaidEvent  
+    Statistics -> Statistics: +amount к выручке
+    
+    Broker -> Statistics--: consume OrderCompletedEvent
+    Statistics -> Statistics: +1 к завершенным заказам
+end
+
+group Фоновая агрегация
+    Statistics -> Statistics: Ежечасный расчет метрик
+    Statistics -> Statistics--: Ежедневная консолидация данных
+end
+
+@enduml

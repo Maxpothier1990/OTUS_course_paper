@@ -1,0 +1,42 @@
+@startuml
+!include <C4/C4_Context>
+!include <C4/C4_Container>
+
+Person(CustumerMenager, "Менеджер по гостипреимству", "Использует приложение для сотрудников")
+Person(ProductMenager, "Менеджер по ассортименту", "Использует приложение для сотрудников")
+Person_Ext(Customer, "Покупатель", "Использует приложения для покупателей")
+Person(Cashier, "Кассир", "Использует приложение для сотрудников")
+Person(Worker, "Работник производства", "Использует приложение для сотрудников")
+
+System_Boundary(restaurant, "Робот и точка", "Система для заказа"){
+Container(infomat, "Табло клиентского зала", "JavaScript/React", "Интерфейс для покупателей")
+Container(web_app, "веб-интерфейс для покупателей", "JavaScript", "Интерфейс для сотрудников")
+Container(mobil_app, "мобильный интерфейс для покупателей", "Android", "Интерфейс для покупателей")
+Container(Admin_web_app, "веб-интерфейс для сотрудников", "JavaScript", "Интерфейс для сотрудников")
+Container(1С, "Касса", "1С", "Интерфейс для кассира")
+Container(Backend, "бэкенд API", "", "Обрабатывает бизнес логику")
+}
+
+System_Ext(warehouse_system, "Система складского учета", "Автоматизация складских")
+System_Ext(robot_system, "Роботизированный комплекс", "Управление роботами")
+System_Ext(payment_gateway, "Банковская система", "Обработка платежей")
+System_Ext(cash, "Касса", "обработка платежей")
+
+CustumerMenager -->  Admin_web_app : использует
+ProductMenager  -->  Admin_web_app : использует
+Customer --> infomat : использует
+Customer --> web_app : использует
+Customer --> mobil_app  : использует
+Cashier  -->  1С : использует
+Worker -->  Admin_web_app : использует
+Backend --> warehouse_system : HTTP/json
+Backend --> robot_system : HTTP/json
+Backend --> payment_gateway : HTTP/json
+Backend --> cash : HTTP/json
+Admin_web_app --> Backend : API
+infomat --> Backend : API
+web_app --> Backend : API
+mobil_app --> Backend : API
+1С --> Backend : API
+
+@enduml
