@@ -2,10 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://maxpothier1990.github.io/OTUS_course_paper/</loc>
-         <lastmod>2026-02-13</lastmod>
+         <lastmod>2026-02-14</lastmod>
     </url>
     <url>
-         <loc>https://maxpothier1990.github.io/OTUS_course_paper/page%202/</loc>
-         <lastmod>2026-02-13</lastmod>
+         <loc>https://maxpothier1990.github.io/OTUS_course_paper/business%20process/</loc>
+         <lastmod>2026-02-14</lastmod>
+    </url>
+    <url>
+         <loc>https://maxpothier1990.github.io/OTUS_course_paper/general%20info/</loc>
+         <lastmod>2026-02-14</lastmod>
+    </url>
+    <url>
+         <loc>https://maxpothier1990.github.io/OTUS_course_paper/glossary/</loc>
+         <lastmod>2026-02-14</lastmod>
+    </url>
+    <url>
+         <loc>https://maxpothier1990.github.io/OTUS_course_paper/reference/</loc>
+         <lastmod>2026-02-14</lastmod>
     </url>
 </urlset>
