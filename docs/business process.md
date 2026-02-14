@@ -2,6 +2,6 @@
 
 1. Заказ блюда
 
-![Процесс оформления заказа](/diagrams/BPMN/Buing_from_terminal.bpmn)
+![Процесс оформления заказа](diagrams/BPMN/buing_from_terminal.bpmn)
 
 2. Оплата заказа
