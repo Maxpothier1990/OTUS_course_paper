@@ -1,0 +1,65 @@
+@startuml Complete Order Process
+title Оформление заказа
+
+actor "Клиент" as Client
+boundary "Приложение" as App
+boundary "API Gateway" as Gateway
+entity "Сервис\n Авторизации" as Auth
+
+box "Фронтенд" #LightBlue
+    participant App
+end box
+
+box "Бэкенд (Синхронные вызовы)" #LightGreen
+    participant Gateway
+    participant Auth
+end box
+
+
+
+== 1. Авторизация ==
+
+Client -> App++: Вход по номеру телефона
+App -> Gateway++: POST /api/auth/quick-auth\n{phone}
+Gateway -> Auth++: POST /internal/auth/quick-auth
+Auth -> Auth: Поиск пользователя
+
+alt Новый пользователь (Авторегистрация)
+    Auth -> Auth: Автоматическое создание пользователя
+    Auth -> Auth: Генерация временного пароля
+    Auth -> Auth: Отправка SMS с паролем
+    Auth --> Gateway: 201 Created + temporary_token
+    Gateway --> App: 201 Created + temporary_token
+    App --> Client: "SMS с паролем отправлено"
+    
+    Client -> App: Ввод пароля из SMS
+    App -> Gateway: POST /api/auth/confirm\n{phone, temp_password}
+    Gateway -> Auth: POST /internal/auth/confirm
+    
+    loop Максимум 3 попытки
+        Auth -> Auth: Верификация пароля
+        alt Пароль верный
+            Auth -> Auth: Генерация JWT токена
+            Auth -> Auth: Активация аккаунта
+            Auth --> Gateway: 200 OK + JWT токен
+            Gateway --> App: 200 OK + full_token
+            App --> Client: Полный доступ к приложению
+        else Пароль неверный
+            Auth --> Gateway: 401 Unauthorized\n"Неверный пароль"
+            Gateway --> App: 401 Unauthorized
+            App --> Client: "Неверный пароль, попробуйте снова"
+            
+            opt Есть еще попытки
+                Client -> App: Повторный ввод пароля
+                App -> Gateway: POST /api/auth/confirm\n{phone, temp_password}
+                Gateway -> Auth: POST /internal/auth/confirm
+            end
+        end
+    end
+
+else Существующий пользователь
+    Auth -> Auth: Генерация JWT токена
+    Auth --> Gateway: 200 OK + JWT токен
+    Gateway --> App: 200 OK + token
+    App --> Client: Мгновенный вход
+end

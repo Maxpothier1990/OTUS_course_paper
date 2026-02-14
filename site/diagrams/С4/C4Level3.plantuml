@@ -1,0 +1,122 @@
+@startuml
+!include <C4/C4_Context>
+!include <C4/C4_Container>
+!include <C4/C4_Component>
+
+'1. Описание объектов диаграммы:
+'1.1 Фронтенд
+Frame "Фронтенд"{
+Container(infomat, "Табло клиентского зала", "JavaScript/React", "Интерфейс для покупателей")
+Container(web_app, "веб-интерфейс для покупателей", "JavaScript", "Интерфейс для сотрудников")
+Container(mobil_app, "мобильный интерфейс для покупателей", "Android", "Интерфейс для покупателей")
+Container(Admin_web_app, "веб-интерфейс для сотрудников", "JavaScript", "Интерфейс для сотрудников")
+Container(1С, "Касса", "1С", "Интерфейс для кассира")
+}
+
+'1.2 Бэкенд
+Container_Boundary(backend, "Бэкенд"){
+Container(APIGateway, "API Gateway", "Единая точка входа, маршрутизация запросов, аутентификация, ограничение скорости, кеширование, мониторинг")
+Container(ServiceRobotics, "Сервис управления роботизированным комплексом", "Spring service", "Служит для настройки технологических карт, снятия статуса роботов и мониторинга производства")
+Container(Autorisation, "Сервис авторизации", "Spring Security", "JWT токены, управление пользователями, ролевая модель доступа")
+
+note left of Autorisation
+<b>Сервис авторизации нужен для:</b>
+- Для покупателей: Чтобы безопасно входить в систему и получать доступ только к своим данным и функциям.
+- Для администраторов системы: для разграничения ролей и прав централизованно.
+- Для API Gateway: Чтобы проверять легитимность входящих запросов и отсекать неавторизованный доступ на входе в систему.
+- Для внутренних сервисов бэкенда: Чтобы безопасно общаться друг с другом через брокер сообщений и быть уверенными, что команды приходят от доверенных источников.
+end note
+
+Container(ServicePayment, "Сервис оплаты", "Spring Boot", "Интеграция с платежными системами, обработка транзакций, управление чеками, возвраты")
+Container(ServiceMenu, "Сервис Меню", "Spring Boot", "Управление каталогом блюд и товаров, ценообразование, акции и скидки, остатки")
+Container(ServiceMessage, "Сервис уведомлений", "Spring Boot", "Отправка SMS, push-уведомлений, шаблоны сообщений, управление рассылками")
+Container(ServiceOrder, "Сервис заказов", "Spring Boot", "Управление жизненным циклом заказов, создание и отмена")
+note right of ServiceOrder
+  <b>Оркестрация композитных операций</b>
+  1. Принимает запрос на создание заказа
+  2. Синхронно вызывает сервисы:
+     - Menu (доступность)
+     - Bonus (бонусы)
+     - Payment (оплата)
+     - Delivery (доставка)
+  3. Возвращает итоговый результат
+  4. Публикует событие для фоновых операций
+end note
+
+Container(ServiceBonus, "Бонусная система", "Spring Boot", "Начисление и списание баллов, управление программой лояльности, история транзакций")
+Container(ServiceStatistics, "Сервис статистики", "Spring Boot", "Сбор и анализ бизнес-метрик, отчеты по продажам и доходам, KPI, аналитика")
+Container(ServiceDelivery, "Сервис доставки", "Spring Boot", "Управление доставками, маршрутизация, расчет сроков, статусы")
+ContainerDb(DbAutorisation, "БД пользователей", "PostgreSQL", "Данные о пользователях и бонусной программе")
+ContainerDb(DbServiceMessage, "БД уведомлений", "PostgreSQL", "Данные об уведомлениях")
+ContainerDb(DbOrders, "БД Заказов", "PostgreSQL", "Данные о заказах")
+ContainerDb(DbDelivery, "БД доставки", "PostgreSQL", "Данные о доставке")
+ContainerDb(DbMenu, "БД Меню", "PostgreSQL", "Данные о меню")
+ContainerDb(DbMain, "БД основная", "PostgreSQL", "Данные о заказах, продажах, доходах, расходах")
+ContainerDb(DbPayment, "БД оплата", "PostgreSQL", "Данные об оплате")
+ContainerDb(DbBonus, "БД системы лояльности", "PostgreSQL", "Данные о программе лояльности")
+
+ContainerQueue(Broker, "Брокер сообщений", "Kafka", "Асинхронная коммуникация между сервисами")
+note left of Broker
+  <b>Только для фоновых операций</b>
+  После успешного выполнения
+  синхронной части:
+  - Уведомления
+  - Статистика
+  - Начисление баллов
+  Не влияет на основной поток
+end note
+}
+
+'1.3 Внешние интегрируемые системы
+frame "Внешние системы" {
+System_Ext(warehouse_system, "Система складского учета", "1C/ERP система", "Учет товарных остатков, движение товаров, инвентаризация, списания")
+System_Ext(robot_system, "Роботизированный комплекс", "Промышленные роботы", "Автоматическое приготовление блюд, конвейерная система, управление оборудованием")
+System_Ext(payment_gateway, "Банковская система", "Эквайринговая платформа", "Обработка платежей по картам, онлайн-платежи, транзакции, безопасность PCI DSS")
+System_Ext(cash, "Фискальный терминал", "АТОЛ/Штрих-М", "Прием наличных платежей, фискальные чеки по 54-ФЗ, отчетность, ОФД")
+}
+
+'2. Связи между компонентами:
+'2.1 Взаимодействие фронтенда и бэкенда
+infomat --> APIGateway : вызывает [restAPI]
+web_app --> APIGateway : вызывает [restAPI]
+mobil_app --> APIGateway : вызывает [restAPI]
+Admin_web_app --> APIGateway : вызывает [restAPI]
+1С --> APIGateway : вызывает [restAPI]
+
+'2.2 Взаимодействие микросервисов внутри бэкенда
+APIGateway <--> Autorisation : rest API
+APIGateway <--> ServiceBonus : rest API
+APIGateway <--> ServicePayment : rest API
+APIGateway <--> ServiceMessage : rest API
+APIGateway <--> ServiceOrder : rest API
+APIGateway <--> ServiceDelivery : rest API
+APIGateway <--> ServiceMenu : rest API
+APIGateway <--> ServiceStatistics : rest API
+APIGateway <--> ServiceRobotics : rest API
+Autorisation ---> DbAutorisation : получение и запись данных 
+ServiceBonus ---> DbBonus : получение и запись данных
+ServiceMessage ---> DbServiceMessage : получение и запись данных
+ServiceOrder ---> DbOrders : получение и запись данных
+ServiceDelivery ---> DbDelivery : получение и запись данных
+ServiceMenu ---> DbMenu : получение и запись данных
+ServiceStatistics ---> DbMain : получение и запись данных
+ServicePayment ---> DbPayment : получение и запись данных
+
+Autorisation <--> Broker : JWT токены, события аутентификации, роли пользователей, права доступа
+ServiceBonus <--> Broker : Бонусные транзакции, обновления лояльности, расчет баллов
+ServiceMessage <--> Broker : Команды уведомлений,шаблоны email/SMS/push, статусы доставки
+ServiceOrder <--> Broker : События жизненного цикла заказов, обновления заказов, смены статусов
+ServiceDelivery <--> Broker : Обновления статусов доставки, назначения курьеров, события трекинга
+ServiceMenu <--> Broker : Обновления меню, изменения ценобновления доступности, складские остатки
+ServiceStatistics <--> Broker : Бизнес-метрики данные аналитики, события KPI
+ServiceRobotics <--> Broker : Команды роботам, обновления статусов операции кухни, состояние оборудования
+ServicePayment <--> Broker : Платежные транзакции данные чеков, операции возвратов
+
+'2.3 Взаимодействие фронтенда ис внешними системами
+APIGateway <--> warehouse_system : Синхронизация остатков ингредиентов резервирование позиций, учет списаний
+APIGateway <--> robot_system : Управление роботизированным комплексом мониторинг состояния оборудования
+APIGateway <--> payment_gateway : Проведение банковских транзакций обработка онлайн-платежей
+APIGateway <--> cash : Фискализация операций учет наличных расчетов
+
+
+@enduml

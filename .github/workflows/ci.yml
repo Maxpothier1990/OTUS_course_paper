@@ -20,9 +20,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install mkdocs
-          pip install mkdocs-bpmn-js   # если нужен именно этот плагин
-          # при необходимости добавьте другие плагины
-
+          pip install mkdocs-bpmn-js
       - name: Build site
         run: mkdocs build
 
