@@ -57,9 +57,9 @@
 
 ## Описание интеграционного взаимодействия
 
-![](out\docs\diagrams\Sequence Diagram\OTUSСервисАвторизации\Autorisation.svg)
+![](out\docs\diagrams\Sequence Diagram\Autorisation\Autorisation.svg)
 
-![](out\docs\diagrams\Sequence Diagram\OTUSСервисЗаказа\Make_order.svg)
+![](out\docs\diagrams\Sequence Diagram\Order_placement\Order_placement.svg)
 
 
 
