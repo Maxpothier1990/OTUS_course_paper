@@ -293,6 +293,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание компонентов
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -538,6 +549,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Описание компонентов
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -587,6 +609,188 @@
 <h2 id="_3">Диаграмма компонентов</h2>
 <p>На диаграмме представлены компоненты микросервисной архитектуры системы и интеграции между данными компонентами.</p>
 <p><img alt="" src="../diagrams/C4Level3/C4Level3.svg" /></p>
+<h2 id="_4">Описание компонентов</h2>
+<table>
+<thead>
+<tr>
+<th>№ п/п</th>
+<th>Тип</th>
+<th>Наименование</th>
+<th>Технологии</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Container</td>
+<td>Табло клиентского зала</td>
+<td>JavaScript / React</td>
+<td>Интерфейс для покупателей в ресторане (инфомат)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Container</td>
+<td>Веб-интерфейс для покупателей</td>
+<td>JavaScript</td>
+<td>Личный кабинет и возможность заказа через веб</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Container</td>
+<td>Мобильный интерфейс для покупателей</td>
+<td>Android</td>
+<td>Мобильное приложение для заказа и отслеживания</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Container</td>
+<td>Веб-интерфейс для сотрудников</td>
+<td>JavaScript</td>
+<td>Административная панель для управления заказами, меню и т.д.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Container</td>
+<td>Касса</td>
+<td>1С</td>
+<td>Интерфейс кассира для приема заказов и оплаты</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Container</td>
+<td>API Gateway</td>
+<td>-</td>
+<td>Единая точка входа, маршрутизация, аутентификация, rate limiting, кеширование, мониторинг</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Container</td>
+<td>Сервис авторизации</td>
+<td>Spring Security</td>
+<td>Управление пользователями, JWT-токены, ролевая модель</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Container</td>
+<td>БД пользователей</td>
+<td>PostgreSQL</td>
+<td>Хранение данных пользователей и ролей</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Container</td>
+<td>Сервис управления роботизированным комплексом</td>
+<td>Spring Boot</td>
+<td>Настройка технологических карт, мониторинг статуса роботов и производства</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Container</td>
+<td>Сервис оплаты</td>
+<td>Spring Boot</td>
+<td>Интеграция с платежными системами, обработка транзакций, чеки, возвраты</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Container</td>
+<td>БД оплаты</td>
+<td>PostgreSQL</td>
+<td>Данные о платежах и транзакциях</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Container</td>
+<td>Сервис меню</td>
+<td>Spring Boot</td>
+<td>Управление каталогом блюд, ценами, акциями, остатками</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Container</td>
+<td>БД меню</td>
+<td>PostgreSQL</td>
+<td>Данные о блюдах, ценах, ингредиентах</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Container</td>
+<td>Сервис уведомлений</td>
+<td>Spring Boot</td>
+<td>Отправка SMS, push-уведомлений, управление шаблонами</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Container</td>
+<td>БД уведомлений</td>
+<td>PostgreSQL</td>
+<td>Хранение шаблонов и истории уведомлений</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Container</td>
+<td>Сервис заказов</td>
+<td>Spring Boot</td>
+<td>Управление жизненным циклом заказов, оркестрация композитных операций</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Container</td>
+<td>БД заказов</td>
+<td>PostgreSQL</td>
+<td>Данные о заказах</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Container</td>
+<td>Бонусная система</td>
+<td>Spring Boot</td>
+<td>Начисление и списание баллов, программа лояльности</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Container</td>
+<td>БД системы лояльности</td>
+<td>PostgreSQL</td>
+<td>Данные о бонусных счетах и транзакциях</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Container</td>
+<td>Сервис статистики</td>
+<td>Spring Boot</td>
+<td>Сбор и анализ бизнес-метрик, отчеты, KPI</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Container</td>
+<td>Основная БД (статистика)</td>
+<td>PostgreSQL</td>
+<td>Хранение данных для аналитики и отчетов</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Container</td>
+<td>Сервис доставки</td>
+<td>Spring Boot</td>
+<td>Управление доставками, маршрутизация, расчет сроков</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Container</td>
+<td>БД доставки</td>
+<td>PostgreSQL</td>
+<td>Данные о доставках и статусах</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Container</td>
+<td>Брокер сообщений</td>
+<td>Apache Kafka</td>
+<td>Асинхронная коммуникация между сервисами для фоновых операций</td>
+</tr>
+</tbody>
+</table>
 
 
 
