@@ -57,9 +57,9 @@
 
 ## Описание интеграционного взаимодействия
 
-![](docs\out\Autorisation.svg)
+![](docs/out/Autorisation.svg)
 
-![](docs\out\Order_placement.svg)
+![](docs/out/Order_placement.svg)
 
 
 
