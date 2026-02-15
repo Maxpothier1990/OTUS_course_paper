@@ -1,5 +1,5 @@
-@startuml Complete Order Process
-title Оформление заказа
+@startuml Autorisation 
+title Авторизация
 
 actor "Клиент" as Client
 boundary "Приложение" as App
