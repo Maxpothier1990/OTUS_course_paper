@@ -24,7 +24,7 @@
 
 На диаграмме представлены компоненты микросервисной архитектуры системы и интеграции между данными компонентами.
 
-![](out\docs\diagrams\С4\C4Level3\C4Level3.svg)
+![](docs\out\C4Level3.svg)
 
 ## Описание компонентов
 
@@ -57,9 +57,9 @@
 
 ## Описание интеграционного взаимодействия
 
-![](out\docs\diagrams\Sequence Diagram\Autorisation\Autorisation.svg)
+![](docs\out\Autorisation.svg)
 
-![](out\docs\diagrams\Sequence Diagram\Order_placement\Order_placement.svg)
+![](docs\out\Order_placement.svg)
 
 
 
