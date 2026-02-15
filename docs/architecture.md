@@ -59,7 +59,10 @@
 
 ![](docs/out/Autorisation.svg)
 
-![](docs/out/Order_placement.svg)
+![][docs\out\Order_placement.svg]
 
 
 
+
+
+[def]: docs/out/Order_placement.svg
