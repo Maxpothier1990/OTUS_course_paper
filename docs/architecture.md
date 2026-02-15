@@ -54,3 +54,12 @@
 | 22    | Container | Сервис доставки                         | Spring Boot         | Управление доставками, маршрутизация, расчет сроков                                       |
 | 23    | Container | БД доставки                             | PostgreSQL          | Данные о доставках и статусах                                                             |
 | 24    | Container | Брокер сообщений                        | Apache Kafka        | Асинхронная коммуникация между сервисами для фоновых операций                             |
+
+## Описание интеграционного взаимодействия
+
+![](out\docs\diagrams\Sequence Diagram\OTUSСервисАвторизации\Autorisation.svg)
+
+![](out\docs\diagrams\Sequence Diagram\OTUSСервисЗаказа\Make_order.svg)
+
+
+
