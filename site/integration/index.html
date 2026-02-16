@@ -1,0 +1,823 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://maxpothier1990.github.io/OTUS_course_paper/integration/">
+      
+      
+        <link rel="prev" href="../glossary/">
+      
+      
+        <link rel="next" href="../model/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Модель интеграционного взаимодействия - OTUS_COURSE_PAPER</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="OTUS_COURSE_PAPER" class="md-header__button md-logo" aria-label="OTUS_COURSE_PAPER" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OTUS_COURSE_PAPER
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Модель интеграционного взаимодействия
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="OTUS_COURSE_PAPER" class="md-nav__button md-logo" aria-label="OTUS_COURSE_PAPER" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    OTUS_COURSE_PAPER
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome to MkDocs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Api
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Компонентная архитектура
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../business%20process/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Описание бизнес процессов
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../general%20info/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Общие сведения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Аббривиатуры и сокращения
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Модель интеграционного взаимодействия
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Модель интеграционного взаимодействия
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Авторизация пользователя
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Заказ блюда
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../model/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Информационная модель
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ссылки
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Требования к системе
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uiux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Uiux
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Авторизация пользователя
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Заказ блюда
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="_1">Модель интеграционного взаимодействия</h1>
+<p>Данный раздел описывает сценарии взаимодействия компонентов системы при выполнении ключевых бизнес-операций: авторизация пользователя и оформление заказа через клиентское табло. Диаграммы последовательности иллюстрируют потоки вызовов между фронтенд-приложениями, API Gateway, микросервисами и внешними системами. Описание каждого сценария включает логику синхронных и асинхронных вызовов, обработку ошибок и альтернативные ветви.</p>
+<h2 id="_2">Авторизация пользователя</h2>
+<p>Цель сценария:</p>
+<p>Обеспечить безопасный доступ пользователя (покупателя) к функционалу системы (оформление заказа, просмотр истории, использование бонусов). Реализована упрощённая регистрация/вход по номеру телефона с подтверждением через SMS.</p>
+<p>Участники:</p>
+<ul>
+<li>Клиент (пользователь)</li>
+<li>Приложение (фронтенд: мобильное приложение или веб-интерфейс)</li>
+<li>API Gateway (единая точка входа)</li>
+<li>Сервис авторизации (микросервис, отвечающий за аутентификацию, генерацию JWT, управление пользователями)</li>
+</ul>
+<p><img alt="" src="../out/Autorisation.svg" /></p>
+<p>Описание потоков:</p>
+<table>
+<thead>
+<tr>
+<th>№</th>
+<th>Наименование</th>
+<th>Процесс</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Запрос на вход</td>
+<td>Пользователь вводит номер телефона в приложении. Приложение отправляет синхронный POST-запрос <code>/api/auth/quick-auth</code> с номером телефона на API Gateway. Gateway маршрутизирует запрос к сервису авторизации (<code>/internal/auth/quick-auth</code>).</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Обработка в сервисе авторизации</td>
+<td>Сервис авторизации выполняет поиск пользователя по номеру телефона в БД. Возможны два варианта: <strong>новый пользователь</strong> (авторегистрация) или <strong>существующий пользователь</strong>.</td>
+</tr>
+<tr>
+<td>2.1</td>
+<td>Авторегистрация (новый пользователь)</td>
+<td>Система автоматически создаёт учётную запись, генерирует временный одноразовый пароль и инициирует отправку SMS с паролем (через сервис уведомлений, асинхронно). Сервис авторизации возвращает <code>201 Created</code> и временный токен (temporary_token). Приложение уведомляет пользователя об отправке SMS.</td>
+</tr>
+<tr>
+<td>2.2</td>
+<td>Вход существующего пользователя</td>
+<td>Сервис авторизации генерирует JWT-токен доступа и возвращает <code>200 OK</code> с токеном. Пользователь получает полный доступ без дополнительных действий.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Подтверждение для нового пользователя</td>
+<td>Пользователь вводит полученный по SMS пароль. Приложение отправляет запрос на подтверждение <code>POST /api/auth/confirm</code> с номером телефона и временным паролем. Gateway направляет запрос в сервис авторизации (<code>/internal/auth/confirm</code>).</td>
+</tr>
+<tr>
+<td>3.1</td>
+<td>Проверка пароля (цикл до 3 попыток)</td>
+<td>Сервис авторизации проверяет временный пароль. При успешной проверке генерируется постоянный JWT-токен, аккаунт активируется, возвращается <code>200 OK</code> с токеном. При неверном пароле возвращается <code>401 Unauthorized</code>, приложение сообщает об ошибке. При исчерпании попыток процесс завершается ошибкой.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Результат</td>
+<td>После успешной аутентификации клиент получает JWT-токен, который будет использоваться для авторизации всех последующих запросов.</td>
+</tr>
+</tbody>
+</table>
+<p>Обоснование синхронного взаимодействия:</p>
+<p>Процесс входа является критическим для дальнейшей работы пользователя и требует немедленного подтверждения, поэтому все вызовы выполняются синхронно. Исключение составляет отправка SMS, которая может быть выполнена асинхронно, чтобы не блокировать ответ.</p>
+<h2 id="_3">Заказ блюда</h2>
+<p>Цель сценария:
+Обеспечить полный цикл создания и оплаты заказа через клиентское табло (или мобильное приложение) с последующим уведомлением пользователя и запуском процессов приготовления и аналитики.</p>
+<p>Участники:</p>
+<ul>
+<li>Клиент (покупатель)</li>
+<li>Табло / Приложение (фронтенд)</li>
+<li>API Gateway</li>
+<li>Сервис авторизации (проверка JWT)</li>
+<li>Сервис меню (управление каталогом и доступностью)</li>
+<li>Сервис заказов (оркестратор жизненного цикла заказа)</li>
+<li>Бонусная система (начисление/списание баллов)</li>
+<li>Сервис оплаты (интеграция с платёжным шлюзом и фискальным регистратором)</li>
+<li>Банковская система (внешний эквайринг)</li>
+<li>Фискальный терминал (АТОЛ/Штрих-М)</li>
+<li>Брокер сообщений (Kafka) для асинхронных уведомлений</li>
+<li>Сервис уведомлений (отправка push/SMS)</li>
+<li>Сервис статистики (сбор метрик)</li>
+<li>Роботизированный комплекс (управление приготовлением)</li>
+</ul>
+<p><img alt="" src="../out/Order_placement.svg" /></p>
+<p>Описание потоков:</p>
+<table>
+<thead>
+<tr>
+<th>№</th>
+<th>Наименование</th>
+<th>Процесс</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Просмотр меню</td>
+<td>Пользователь открывает приложение/табло. Фронтенд синхронно запрашивает актуальное меню через Gateway к сервису меню (<code>GET /api/menu/categories</code>). Сервис меню возвращает структурированный каталог блюд с ценами и признаками доступности.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Создание заказа</td>
+<td>Пользователь добавляет товары в корзину и инициирует создание заказа. Фронтенд отправляет <code>POST /api/orders/create</code> с составом заказа. Gateway направляет запрос в сервис заказов. Сервис заказов синхронно проверяет доступность каждого товара через сервис меню (<code>GET /internal/menu/availability</code>). Если все товары доступны, сервис заказов создаёт запись в БД заказов со статусом "создан", рассчитывает предварительную сумму и возвращает фронтенду <code>201 Created</code> с идентификатором заказа и суммой.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Процесс оплаты</td>
+<td>Пользователь подтверждает оплату, возможно применяя бонусы. Фронтенд отправляет запрос на оплату <code>POST /api/orders/{orderId}/payment</code> с данными карты (токенизированными) и информацией о списании бонусов. Gateway маршрутизирует запрос в сервис оплаты.</td>
+</tr>
+<tr>
+<td>3.1</td>
+<td>Проверка авторизации</td>
+<td>Перед выполнением платежа сервис оплаты проверяет валидность JWT-токена пользователя (через Gateway и сервис авторизации).</td>
+</tr>
+<tr>
+<td>3.2</td>
+<td>Резервирование ингредиентов</td>
+<td>Сервис оплаты синхронно запрашивает у сервиса роботизированного комплекса доступность ингредиентов и резервирует их (<code>POST /internal/robotics/ingredients</code>). Это гарантирует возможность приготовления после оплаты.</td>
+</tr>
+<tr>
+<td>3.3</td>
+<td>Платёжная транзакция</td>
+<td>Сервис оплаты отправляет запрос в банковскую систему (<code>POST /transactions</code>). В случае успеха получает подтверждение (transaction ID). При недоступности банка или отказе транзакции процесс прерывается с ошибкой.</td>
+</tr>
+<tr>
+<td>3.4</td>
+<td>Фискализация</td>
+<td>После успешного списания средств сервис оплаты отправляет чек в фискальный терминал (<code>POST /receipts</code>). Фискальный регистратор возвращает номер фискального документа.</td>
+</tr>
+<tr>
+<td>3.5</td>
+<td>Обновление статуса заказа</td>
+<td>Сервис оплаты уведомляет сервис заказов об успешной оплате (<code>PUT /internal/orders/{orderId}/status</code>). Сервис заказов меняет статус заказа на "оплачен".</td>
+</tr>
+<tr>
+<td>3.6</td>
+<td>Публикация события</td>
+<td>Сервис заказов публикует в брокер сообщений событие <code>OrderPaidEvent</code>, содержащее детали заказа (ID, пользователь, сумма, использованные бонусы).</td>
+</tr>
+<tr>
+<td>3.7</td>
+<td>Ответ клиенту</td>
+<td>Сервис оплаты возвращает фронтенду <code>200 OK</code> с подтверждением оплаты.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Приготовление блюда и выдача заказа</td>
+<td>Брокер сообщений доставляет событие <code>OrderPaidEvent</code> сервису роботизированного комплекса. Сервис роботов запускает процесс приготовления по технологической карте.</td>
+</tr>
+<tr>
+<td>4.1</td>
+<td>Установка SSE-соединения для табло</td>
+<td>Табло клиентского зала устанавливает с сервисом заказов долгоживущее SSE-соединение через Gateway (<code>GET /api/display/events</code>). Сервис заказов подписывает соединение на обновления статуса заказа.</td>
+</tr>
+<tr>
+<td>4.2</td>
+<td>Обновление статуса на табло</td>
+<td>При готовности заказа сервис роботов публикует событие <code>OrderReadyEvent</code> в брокер. Сервис заказов потребляет событие и через открытое SSE-соединение отправляет обновление на табло.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Уведомления пользователя</td>
+<td>Брокер доставляет событие <code>OrderPaidEvent</code> сервису уведомлений. Сервис уведомлений отправляет push/SMS пользователю о принятии заказа. При дальнейших изменениях статуса сервис заказов публикует события, которые также обрабатываются сервисом уведомлений.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Сбор статистики</td>
+<td>Все значимые события (заказ создан, оплачен, завершён) публикуются в брокер и потребляются сервисом статистики. Сервис статистики агрегирует данные в реальном времени (количество заказов, выручка, использование бонусов) и периодически выполняет фоновые расчёты для отчётов.</td>
+</tr>
+</tbody>
+</table>
+<p>Обоснование комбинированного взаимодействия:</p>
+<ul>
+<li>
+<p>Синхронные вызовы используются на этапах, где требуется немедленный ответ и согласованность данных: создание заказа, проверка доступности, проведение платежа, фискализация. Это обеспечивает целостность транзакции и исключает ситуации, когда заказ оплачен, но ингредиенты не зарезервированы.</p>
+</li>
+<li>
+<p>Асинхронные события применяются для операций, не влияющих на основной поток: уведомления, обновление статистики, запуск приготовления. Это разгружает критические сервисы и повышает отказоустойчивость – даже при временной недоступности сервиса уведомлений или статистики заказ будет успешно оформлен.</p>
+</li>
+<li>
+<p>SSE-соединение обеспечивает эффективную доставку обновлений статуса на табло без необходимости постоянных запросов со стороны клиента (long polling).</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": [], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
