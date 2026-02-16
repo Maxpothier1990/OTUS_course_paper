@@ -5,7 +5,7 @@
 
 ### **`WF1`** Стартовое окно
 
-![](out/assets/Main_window.svg)
+![WF1](out/assets/Main_window.svg)
 
 ### **`WF2`** Окно с меню
 
