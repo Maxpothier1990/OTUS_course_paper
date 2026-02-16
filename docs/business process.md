@@ -4,16 +4,16 @@
 
 На схеме представлены следующие бизнес-процессы:
 
-[Процесс оформления заказа](diagrams/BPMN/make_order.bpmn)
+![Процесс оформления заказа](diagrams/BPMN/make_order.bpmn)
 
 ## 2. Выбор блюда из меню
 
 На схеме представлены следующие бизнес-процессы:
 
-[Выбор категории блюда](diagrams/BPMN/chosing_from_menu.bpmn)
+![Выбор категории блюда](diagrams/BPMN/chosing_from_menu.bpmn)
 
 ## 2. Оплата заказа
 
 На схеме представлены следующие бизнес-процессы:
 
-[Оплата заказа](diagrams/BPMN/payment_order.bpmn)
+![Оплата заказа](diagrams/BPMN/payment_order.bpmn)
