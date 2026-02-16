@@ -57,12 +57,11 @@
 
 ## Описание интеграционного взаимодействия
 
-![](docs/out/Autorisation.svg)
+![](out/Autorisation.svg)
 
-![](/docs/out/Order_placement.svg)
+![](out/Order_placement.svg)
 
 
 
 11111
 
-[def]: docs/out/Order_placement.svg
