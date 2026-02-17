@@ -1,0 +1,225 @@
+@startuml
+' Диаграмма классов системы автоматизации ресторана с роботизированным комплексом
+' Сущности сгруппированы по контекстам микросервисов
+
+package "Сервис авторизации" {
+  class Клиент {
+    +id: UUID
+    +phoneNumber: String
+    +passwordHash: String
+    +createdAt: DateTime
+    +lastLogin: DateTime
+    +isActive: Boolean
+    +role: String
+  }
+}
+
+package "Сервис меню" {
+  class Меню {
+    +id: UUID
+    +name: String
+    +description: String
+    +isActive: Boolean
+    +validFrom: DateTime
+    +validTo: DateTime
+  }
+
+  class КатегорияТовара {
+    +id: UUID
+    +name: String
+    +parentCategory: UUID
+    +sortOrder: Integer
+  }
+
+  class Товар {
+    +id: UUID
+    +name: String
+    +description: String
+    +price: Decimal
+    +photoUrl: String
+    +isAvailable: Boolean
+    +categoryId: UUID
+    +recipeId: UUID (для комбобургеров)
+  }
+
+  class Ингредиент {
+    +id: UUID
+    +name: String
+    +proteins: Float
+    +fats: Float
+    +carbs: Float
+    +calories: Integer
+    +cost: Decimal
+    +sortOrder: Integer
+    +category: String
+    +markupCoefficient: Float
+  }
+
+  class Комбобургер {
+    +id: UUID
+    +description: String
+    +basePrice: Decimal
+    +markup: Decimal
+    +calories: Integer
+    +protein: Float
+    +fat: Float
+    +carbs: Float
+    +photoUrl: String
+  }
+
+  class Рецепт {
+    +id: UUID
+    +productId: UUID (ссылка на Товар или Комбобургер)
+    +ingredientId: UUID
+    +quantity: Integer
+    +unit: String
+  }
+}
+
+package "Сервис заказов" {
+  class Корзина {
+    +id: UUID
+    +clientId: UUID
+    +createdAt: DateTime
+    +updatedAt: DateTime
+    +status: String (активна/оформлена)
+  }
+
+  class ПозицияКорзины {
+    +id: UUID
+    +cartId: UUID
+    +productId: UUID
+    +quantity: Integer
+    +priceAtAddition: Decimal
+  }
+
+  class Заказ {
+    +id: UUID
+    +clientId: UUID
+    +cartId: UUID
+    +orderNumber: String
+    +createdAt: DateTime
+    +status: String (создан, оплачен, готовится, готов, выдан, отменён)
+    +pickupMethod: String (самовывоз, доставка)
+    +pickupTime: DateTime
+    +totalAmount: Decimal
+    +bonusUsed: Integer
+    +deliveryId: UUID (опционально)
+  }
+
+  class СтатусЗаказа {
+    +id: UUID
+    +orderId: UUID
+    +status: String
+    +changedAt: DateTime
+    +comment: String
+  }
+}
+
+package "Сервис оплаты" {
+  class Оплата {
+    +id: UUID
+    +orderId: UUID
+    +paymentMethod: String (card, cash, bonus)
+    +cardToken: String (токенизированный)
+    +amount: Decimal
+    +status: String (pending, approved, failed, refunded)
+    +transactionId: String (внешний ID банка)
+    +fiscalId: String (номер фискального чека)
+    +paidAt: DateTime
+  }
+
+  class Чек {
+    +id: UUID
+    +paymentId: UUID
+    +fiscalNumber: String
+    +fiscalDocument: String
+    +fiscalSign: String
+    +ofdUrl: String
+    +createdAt: DateTime
+  }
+}
+
+package "Бонусная система" {
+  class БонусныйСчет {
+    +id: UUID
+    +clientId: UUID
+    +balance: Integer
+    +lifetimePoints: Integer
+    +tier: String (обычный, серебряный, золотой)
+    +updatedAt: DateTime
+  }
+
+  class БонуснаяТранзакция {
+    +id: UUID
+    +accountId: UUID
+    +orderId: UUID
+    +amount: Integer
+    +type: String (начисление, списание, сгорание)
+    +description: String
+    +createdAt: DateTime
+  }
+
+  class ПравилоЛояльности {
+    +id: UUID
+    +name: String
+    +accrualRate: Float (бонусов за рубль)
+    +burnAfterDays: Integer
+    +minOrderAmount: Decimal
+  }
+}
+
+package "Сервис доставки" {
+  class Доставка {
+    +id: UUID
+    +orderId: UUID
+    +address: String
+    +courierId: UUID
+    +status: String (ожидает, назначен, в пути, выполнен)
+    +estimatedDeliveryTime: DateTime
+    +actualDeliveryTime: DateTime
+    +deliveryCost: Decimal
+  }
+
+  class Курьер {
+    +id: UUID
+    +name: String
+    +phone: String
+    +vehicle: String
+    +isActive: Boolean
+    +currentLocation: String
+  }
+}
+
+' Связи между сущностями
+
+' Клиент и бонусы
+Клиент ||--o| БонусныйСчет : имеет
+БонусныйСчет ||--o{ БонуснаяТранзакция : содержит
+
+' Меню
+Меню ||--o{ КатегорияТовара : включает
+КатегорияТовара ||--o{ Товар : содержит
+Товар ||--o{ Рецепт : "готовится из"
+Ингредиент ||--o{ Рецепт : используется в
+Комбобургер ||--|| Товар : является (наследование)
+
+' Корзина и заказ
+Клиент ||--o{ Корзина : имеет
+Корзина ||--o{ ПозицияКорзины : содержит
+ПозицияКорзины ||--|| Товар : ссылается
+Корзина ||--|| Заказ : преобразуется в
+
+' Заказ
+Заказ ||--o{ СтатусЗаказа : "история статусов"
+Заказ ||--|| Оплата : "произведена"
+Заказ ||--o| Доставка : "может иметь"
+Заказ }o--|| БонуснаяТранзакция : "использует бонусы"
+
+' Оплата и чеки
+Оплата ||--|| Чек : "фискализация"
+
+' Доставка
+Доставка ||--|| Курьер : назначен
+
+@enduml
