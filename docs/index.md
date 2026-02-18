@@ -15,3 +15,12 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
     docs/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
+
+Проект: Приложение для заказа + табло
+Версия документа: 1.0
+Дата выпуска: 01 февраля 2026 г.
+Утвердил: [Генеральный директор компании-заказчика]
+Разработчик: ООО "ТехноСофт"
+Заказчик: ООО «ФудТехноВенчурс»
+Соответствие стандарту: ISO/IEC/IEEE 29148:2018
+
