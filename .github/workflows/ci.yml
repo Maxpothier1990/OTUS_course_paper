@@ -24,16 +24,14 @@ jobs:
           pip install mkdocs-bpmn-js
           pip install mkdocs-glightbox
           pip install mkdocs-swagger-ui-tag
-          pip3 install mkdocs-build-plantuml-plugin
-          pip3 install mkdocs-enumerate-headings-plugin
-          pip install mkdocs-material 
-          mkdocs gh-deploy --force
-          Build site
-          mkdocs build
-
+          pip install mkdocs-build-plantuml-plugin
+          pip install mkdocs-enumerate-headings-plugin
       
+      - name: Build site
+        run: mkdocs build
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site          
+          publish_dir: ./site
