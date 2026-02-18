@@ -43,6 +43,8 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.mark
   - pymdownx.superfences
+  - pymdownx.snippets:
+      base_path: ['docs']
 
 
 plugins:

@@ -9,7 +9,9 @@
 - оплата заказа
 - получение заказа
 
-![Процесс оформления заказа](diagrams/BPMN/make_order.bpmn)
+```bpmn
+--8<-- "diagrams/BPMN/make_order.bpmn"
+```
 
 ## Выбор блюда из меню
 
