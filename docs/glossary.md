@@ -1,7 +1,7 @@
 # Аббривиатуры и сокращения
 
-API — Application Programming Interface (Программный интерфейс приложения).
-CIT — Customer Interface Terminal (Терминал взаимодействия с клиентом).
+<ul>API — Application Programming Interface (Программный интерфейс приложения).</li>
+<ul>CIT — Customer Interface Terminal (Терминал взаимодействия с клиентом).</li>
 ERP — Enterprise Resource Planning (Планирование ресурсов предприятия).
 FIFO/LIFO — First In, First Out / Last In, First Out (Методы учета запасов).
 GUI — Graphical User Interface (Графический пользовательский интерфейс).
