@@ -45,12 +45,7 @@ markdown_extensions:
   - pymdownx.snippets:
     base_path: ['docs']
   - pymdownx.superfences:
-    custom_fences:
-      - name: bpmn
-        class: bpmn
-        format: !!python/name:mkdocs_bpmn_js.fence_bpmn
-
-
+    
 plugins:
   - bpmn-js
   - search:
