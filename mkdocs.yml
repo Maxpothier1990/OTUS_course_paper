@@ -43,7 +43,7 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.mark
   - pymdownx.superfences
-  
+
 
 plugins:
   - bpmn-js
@@ -65,6 +65,14 @@ plugins:
         - index.md
         - glossary.md
         - reference.md
+  - glightbox:
+      effect: zoom          # Эффект появления (zoom, fade, none)
+      zoomable: true        # Возможность приближать изображение внутри лайтбокса
+      draggable: true       # Возможность перетаскивать изображение
+      background: none      # Убирает белый фон, делая фон прозрачным (идеально для SVG)
+      shadow: false         # Отключает тень, чтобы не было артефактов вокруг прозрачной картинки
+      width: "100%"         # Ширина в лайтбоксе
+      height: "auto"
 
 nav:
   - Домашняя страница:
