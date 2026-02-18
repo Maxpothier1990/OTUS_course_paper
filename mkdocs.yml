@@ -42,9 +42,13 @@ markdown_extensions:
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.mark
-  - pymdownx.superfences
   - pymdownx.snippets:
-      base_path: ['docs']
+    base_path: ['docs']
+  - pymdownx.superfences:
+    custom_fences:
+      - name: bpmn
+        class: bpmn
+        format: !!python/name:mkdocs_bpmn_js.fence_bpmn
 
 
 plugins:
