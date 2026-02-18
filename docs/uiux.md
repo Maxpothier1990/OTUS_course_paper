@@ -1,4 +1,4 @@
-# 10. Пользовательский интерфейс приложения
+# Пользовательский интерфейс приложения
 
 ## Вайрфреймы
 Пользовательский интерфейс представлен в виде вайрфоеймов страниц веб-приложения.
@@ -60,4 +60,4 @@
 ![](out/assets/Waiting_action.svg)
 
 
-### Кликабельный прототип доступен по [[ссылке](https://www.figma.com/proto/wcKSKkwPuZBi0HBJKPQGEw/Wireframes-Kit--Free---Community-?page-id=203%3A1449&node-id=207-1463&p=f&viewport=-68%2C311%2C0.3&t=SrlNEM40S7dQCZuQ-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=207%3A1463)]
+## Кликабельный прототип доступен по [[ссылке](https://www.figma.com/proto/wcKSKkwPuZBi0HBJKPQGEw/Wireframes-Kit--Free---Community-?page-id=203%3A1449&node-id=207-1463&p=f&viewport=-68%2C311%2C0.3&t=SrlNEM40S7dQCZuQ-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=207%3A1463)]
