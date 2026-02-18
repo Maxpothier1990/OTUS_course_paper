@@ -22,8 +22,14 @@ jobs:
           pip install mkdocs
           pip install mkdocs-material
           pip install mkdocs-bpmn-js
-      - name: Build site
-        run: mkdocs build
+          pip install mkdocs-glightbox
+          pip install mkdocs-swagger-ui-tag
+          pip3 install mkdocs-build-plantuml-plugin
+          pip3 install mkdocs-enumerate-headings-plugin
+          pip install mkdocs-material 
+          mkdocs gh-deploy --force
+          Build site
+          mkdocs build
 
       
       - name: Deploy to GitHub Pages
