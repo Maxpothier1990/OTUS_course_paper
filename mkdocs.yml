@@ -10,7 +10,7 @@ site_url: https://maxpothier1990.github.io/OTUS_course_paper/
 theme:
   name: material
   palette:
-	  primary: teal
+    primary: teal
     
   font:
     text: Roboto
