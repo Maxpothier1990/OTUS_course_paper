@@ -36,6 +36,14 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - tables
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.mark
+  - pymdownx.superfences
+  
 
 plugins:
   - bpmn-js
