@@ -44,7 +44,6 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.snippets:
     base_path: ['docs']
-  - pymdownx.superfences:
     
 plugins:
   - bpmn-js
