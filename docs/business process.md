@@ -10,8 +10,8 @@
 - получение заказа
 
 ```bpmn
---8<-- "diagrams/BPMN/make_order.bpmn"
-
+--8<-- diagrams/BPMN/make_order.bpmn
+```
 
 ## Выбор блюда из меню
 
