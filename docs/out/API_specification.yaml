@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: КиберФуд
   description: OpenAPI спецификация для табло самообслуживания
-  version: '0.1.2'
+  version: '0.2.0'
 servers:
   - url: https://localhost:8080/api/v1/
 
@@ -272,6 +272,54 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ExtendedErrorMessage'
+
+  /bonuses:
+    get:
+      tags:
+        - Бонусы
+      summary: Получить баланс и историю бонусных операций
+      description: Возвращает текущий баланс бонусных баллов и историю их начисления/списания с пагинацией.
+      operationId: getBonuses
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: offset
+          in: query
+          description: Номер первого элемента в истории
+          required: false
+          schema:
+            type: integer
+            minimum: 0
+            default: 0
+        - name: limit
+          in: query
+          description: Количество операций на странице
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 50
+            default: 10
+      responses:
+        "200":
+          description: Данные о бонусах получены
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BonusResponse'
+        "401":
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExtendedErrorMessage'
+        "500":
+          description: Сервер не отвечает
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExtendedErrorMessage'
+
   /orders:
     post:
       tags:
@@ -336,6 +384,71 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/OrderStatus'
+        "401":
+          description: Пользователь не авторизован
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExtendedErrorMessage'
+        "403":
+          description: Заказ не принадлежит пользователю
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExtendedErrorMessage'
+        "404":
+          description: Заказ не найден
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExtendedErrorMessage'
+        "500":
+          description: Сервер не отвечает
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExtendedErrorMessage'
+
+  /orders/{orderId}/cancel:
+    post:
+      tags:
+        - Заказы
+      summary: Отменить заказ
+      description: Отменяет заказ, если он ещё не был выдан. Для оплаченных заказов инициирует возврат средств.
+      operationId: cancelOrder
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: orderId
+          in: path
+          description: Идентификатор заказа
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reason:
+                  type: string
+                  description: Причина отмены (опционально)
+                  maxLength: 500
+      responses:
+        "200":
+          description: Заказ успешно отменён
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderResponse'
+        "400":
+          description: Невозможно отменить заказ (например, уже выдан)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExtendedErrorMessage'
         "401":
           description: Пользователь не авторизован
           content:
@@ -579,6 +692,47 @@ paths:
               schema:
                 $ref: '#/components/schemas/ExtendedErrorMessage'
 
+  /orders/stream:
+    get:
+      tags:
+        - Заказы
+      summary: Поток событий заказов в реальном времени
+      description: Устанавливает SSE-соединение для получения обновлений статусов заказов (для табло в зале или мобильного приложения).
+      operationId: streamOrders
+      parameters:
+        - name: orderIds
+          in: query
+          description: Список идентификаторов заказов для отслеживания (если не указан, отслеживаются все заказы пользователя)
+          required: false
+          schema:
+            type: array
+            items:
+              type: integer
+          style: form
+          explode: false
+      responses:
+        "200":
+          description: SSE поток открыт
+          content:
+            text/event-stream:
+              schema:
+                type: string
+                example: |
+                  event: order_update
+                  data: {"orderId": 123, "status": "preparing", "estimatedReadyTime": "2025-02-20T12:30:00Z"}
+        "401":
+          description: Требуется авторизация для отслеживания заказов пользователя
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExtendedErrorMessage'
+        "500":
+          description: Сервер не отвечает
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ExtendedErrorMessage'
+
 components:
   securitySchemes:
     bearerAuth:
@@ -757,6 +911,7 @@ components:
       required:
         - items
         - paymentMethod
+        - fulfillmentType
       properties:
         items:
           type: array
@@ -768,6 +923,10 @@ components:
           type: string
           enum: ['card', 'cash', 'qr_code']
           description: Способ оплаты
+        fulfillmentType:
+          type: string
+          enum: ['dine_in', 'takeaway']
+          description: Способ получения заказа (в зале / с собой)
         previousOrderId:
           type: integer
           description: Идентификатор предыдущего заказа, если это повторный заказ. Используется для аналитики и отслеживания повторных покупок.
@@ -779,6 +938,10 @@ components:
           type: string
           description: Адрес доставки (если требуется)
           maxLength: 500
+        bonusesToSpend:
+          type: integer
+          description: Количество бонусных баллов для списания (если применимо)
+          minimum: 0
 
     OrderItemRequest:
       type: object
@@ -808,6 +971,7 @@ components:
           type: string
           enum: ['pending', 'confirmed', 'preparing', 'ready_for_pickup', 'completed', 'cancelled']
           description: Текущий статус заказа
+
     OrderResponse:
       type: object
       required:
@@ -817,6 +981,7 @@ components:
         - createdAt
         - totalAmount
         - items
+        - fulfillmentType
       properties:
         orderId:
           type: integer
@@ -829,6 +994,10 @@ components:
           type: string
           enum: ['pending', 'confirmed', 'preparing', 'ready_for_pickup', 'completed', 'cancelled']
           description: Текущий статус заказа
+        fulfillmentType:
+          type: string
+          enum: ['dine_in', 'takeaway']
+          description: Способ получения заказа
         previousOrderId:
           type: integer
           description: Идентификатор предыдущего заказа для повторных заказов
@@ -870,6 +1039,12 @@ components:
         deliveryAddress:
           type: string
           description: Адрес доставки
+        bonusesSpent:
+          type: integer
+          description: Количество бонусных баллов, списанных при оплате
+        bonusesEarned:
+          type: integer
+          description: Количество бонусных баллов, начисленных за заказ
 
     OrderItemResponse:
       type: object
@@ -969,6 +1144,7 @@ components:
         - createdAt
         - totalAmount
         - itemsCount
+        - fulfillmentType
       properties:
         orderId:
           type: integer
@@ -981,6 +1157,10 @@ components:
           type: string
           enum: ['pending', 'confirmed', 'preparing', 'ready_for_pickup', 'completed', 'cancelled']
           description: Текущий статус заказа
+        fulfillmentType:
+          type: string
+          enum: ['dine_in', 'takeaway']
+          description: Способ получения заказа
         createdAt:
           type: string
           format: date-time
@@ -1086,6 +1266,7 @@ components:
           type: string
           format: date-time
           description: Дата и время последнего обновления отзыва
+
     PaginatedReviewsResponse:
       type: object
       required:
@@ -1118,6 +1299,63 @@ components:
           description: Список отзывов на текущей странице
           items:
             $ref: '#/components/schemas/Review'
+
+    BonusResponse:
+      type: object
+      required:
+        - balance
+        - transactions
+      properties:
+        balance:
+          type: integer
+          description: Текущий баланс бонусных баллов
+          example: 150
+        transactions:
+          type: array
+          description: Список последних операций
+          items:
+            $ref: '#/components/schemas/BonusTransaction'
+        total:
+          type: integer
+          description: Общее количество операций (для пагинации)
+        offset:
+          type: integer
+          description: Текущее смещение
+        limit:
+          type: integer
+          description: Лимит на странице
+
+    BonusTransaction:
+      type: object
+      required:
+        - id
+        - type
+        - amount
+        - date
+        - description
+      properties:
+        id:
+          type: integer
+          description: Идентификатор транзакции
+        type:
+          type: string
+          enum: ['earned', 'spent', 'refunded']
+          description: Тип операции (начисление, списание, возврат)
+        amount:
+          type: integer
+          description: Количество баллов (положительное для начисления, отрицательное для списания)
+          example: 50
+        date:
+          type: string
+          format: date-time
+          description: Дата и время операции
+        description:
+          type: string
+          description: Описание операции (например, "Заказ №123")
+        orderId:
+          type: integer
+          description: Идентификатор связанного заказа (если применимо)
+
     ExtendedErrorMessage:
       description: Сообщение об ошибке
       allOf:
