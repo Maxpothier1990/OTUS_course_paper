@@ -75,7 +75,7 @@ plugins:
       height: "auto"
 
 nav:
-  - Домашняя страница:
+  - Титульный лист:
     - index.md
   - Документация:
     - glossary.md

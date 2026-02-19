@@ -1,26 +1,25 @@
-# Welcome to MkDocs
+# Добро пожаловать в документацию проекта «Приложение для заказа + табло»
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+<div style="background-color: #f5f5f5; padding: 25px; border-radius: 12px; margin: 30px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
 
-## Commands
+## Основные сведения о документе
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+|                            |                                           |
+|----------------------------|-------------------------------------------|
+| **Проект**                 | Приложение для заказа + табло             |
+| **Версия документа**       | 1.0                                       |
+| **Дата выпуска**           | 01 февраля 2026 г.                        |
+| **Утвердил**               | [Генеральный директор компании-заказчика] |
+| **Разработчик**            | ООО «ТехноСофт»                           |
+| **Заказчик**               | ООО «ФудТехноВенчурс»                     |
+| **Соответствие стандарту** | ISO/IEC/IEEE 29148:2018                   |
 
-## Project layout
+</div>
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
-
-Проект: Приложение для заказа + табло
-Версия документа: 1.0
-Дата выпуска: 01 февраля 2026 г.
-Утвердил: [Генеральный директор компании-заказчика]
-Разработчик: ООО "ТехноСофт"
-Заказчик: ООО «ФудТехноВенчурс»
-Соответствие стандарту: ISO/IEC/IEEE 29148:2018
+<div style="text-align: center; margin: 50px 0;">
+    <a href="docs/glossary.md" style="display: inline-block; background-color: #007bff; color: white; padding: 15px 30px; font-size: 1.2em; text-decoration: none; border-radius: 50px; box-shadow: 0 4px 6px rgba(0,123,255,0.3); transition: background-color 0.2s;">
+        ➡️ Перейти к документации
+    </a>
+    <p style="margin-top: 15px; color: #666;">Нажмите, чтобы начать знакомство с требованиями и архитектурой системы</p>
+</div>
 
