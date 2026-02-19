@@ -42,6 +42,7 @@ markdown_extensions:
   - pymdownx.highlight
   - pymdownx.inlinehilite
   - pymdownx.mark
+  - attr_list
   - pymdownx.snippets:
       base_path: ['docs']
     
@@ -75,7 +76,7 @@ plugins:
       height: "auto"
 
 nav:
-  - Титульный лист:
+  - О проекте:
     - index.md
   - Документация:
     - glossary.md
