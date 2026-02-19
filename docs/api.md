@@ -1,1 +1,3 @@
-11. API приложения
+# API приложения
+
+<swagger-ui src="out/API_specification.yaml"/>

@@ -45,6 +45,7 @@ markdown_extensions:
   - attr_list
   - pymdownx.snippets:
       base_path: ['docs']
+  
     
 plugins:
   - bpmn-js
