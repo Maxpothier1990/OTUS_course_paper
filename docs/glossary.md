@@ -1,4 +1,4 @@
-# Аббривиатуры и сокращения
+# Аббревиатуры и сокращения
 
 <p>API — Application Programming Interface (Программный интерфейс приложения).</p>
 <p>CIT — Customer Interface Terminal (Терминал взаимодействия с клиентом).</p>
