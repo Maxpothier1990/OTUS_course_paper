@@ -43,7 +43,7 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.mark
   - pymdownx.snippets:
-    base_path: ['docs']
+      base_path: ['docs']
     
 plugins:
   - bpmn-js
