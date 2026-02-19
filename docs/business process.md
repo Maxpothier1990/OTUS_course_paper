@@ -9,7 +9,7 @@
 - оплата заказа
 - получение заказа
 
-bpmn
+```bpmn
 --8<-- "diagrams/BPMN/make_order.bpmn"
 
 
