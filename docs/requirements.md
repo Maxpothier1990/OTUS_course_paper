@@ -110,8 +110,8 @@
 
 ### User Story диаграмма
 
-Основные функции системы представлены в виде User story mapping.  
+Основные функции системы представлены в виде диаграммы User story.  
 
-[[ссылке](https://app.holst.so/board/9f0d42f8-4105-432a-a045-a35bc6129e56)]
+[[User story mapping](https://app.holst.so/share/b/88076e88-4e70-47f7-8d50-dead7810f132)]
 
 ### Описание User story, реализуемых в рамках MVP
