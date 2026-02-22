@@ -327,8 +327,8 @@ paths:
       summary: Создание нового заказа
       description: Создает новый заказ. Для повторного заказа передайте previousOrderId в теле запроса.
       operationId: createOrder
-      security:
-        - bearerAuth: []
+      #security:
+      #  - bearerAuth: []
       requestBody:
         required: true
         content:
