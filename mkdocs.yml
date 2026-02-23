@@ -93,15 +93,15 @@ nav:
     - api.md
     - reference.md
   - Задачи:
-    - US1.md
-    - US2.md
-    - US3.md
-    - US4.md
-    - US7.md
-    - US16.md
-    - US19.md
-    - US20.md
-    - US21.md
-    - US26.md
+    - tasks/US1.md
+    - tasks/US2.md
+    - tasks/US3.md
+    - tasks/US4.md
+    - tasks/US7.md
+    - tasks/US16.md
+    - tasks/US19.md
+    - tasks/US20.md
+    - tasks/US21.md
+    - tasks/US26.md
   
     
