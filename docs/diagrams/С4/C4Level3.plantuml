@@ -15,8 +15,12 @@ Container(1С, "Касса", "1С", "Интерфейс для кассира")
 
 '1.2 Бэкенд
 Container_Boundary(backend, "Бэкенд"){
+
+'===APIGateway===
 Container(APIGateway, "API Gateway", "Единая точка входа, маршрутизация запросов, аутентификация, ограничение скорости, кеширование, мониторинг")
-Container(ServiceRobotics, "Сервис управления роботизированным комплексом", "Spring service", "Служит для настройки технологических карт, снятия статуса роботов и мониторинга производства")
+
+'===Cервис Авторизации===
+Boundary(MicroserviceAutorisation, "Микросервис авторизации") {
 Container(Autorisation, "Сервис авторизации", "Spring Security", "JWT токены, управление пользователями, ролевая модель доступа")
 
 note left of Autorisation
@@ -27,9 +31,34 @@ note left of Autorisation
 - Для внутренних сервисов бэкенда: Чтобы безопасно общаться друг с другом через брокер сообщений и быть уверенными, что команды приходят от доверенных источников.
 end note
 
-Container(ServicePayment, "Сервис оплаты", "Spring Boot", "Интеграция с платежными системами, обработка транзакций, управление чеками, возвраты")
+ContainerDb(DbAutorisation, "БД пользователей", "PostgreSQL", "Данные о пользователях и бонусной программе")
+}
+
+'===Сервис меню===
+Boundary(MicroserviceMenu, "Микросервис меню") {
 Container(ServiceMenu, "Сервис Меню", "Spring Boot", "Управление каталогом блюд и товаров, ценообразование, акции и скидки, остатки")
+ContainerDb(DbMenu, "БД Меню", "PostgreSQL", "Данные о меню")
+}
+
+'===Сервис оплаты===
+Boundary(MicroservicePayment, "Микросервис оплаты") {
+Container(ServicePayment, "Сервис оплаты", "Spring Boot", "Интеграция с платежными системами, обработка транзакций, управление чеками, возвраты")
+ContainerDb(DbPayment, "БД оплата", "PostgreSQL", "Данные об оплате")
+}
+
+'===Сервис управления роботизированным комплексом===
+Boundary(MicroserviceRobotics, "Микросервис управления роботизированным комплексом") {
+Container(ServiceRobotics, "Сервис управления роботизированным комплексом", "Spring service", "Служит для настройки технологических карт, снятия статуса роботов и мониторинга производства")
+}
+
+'===Сервис уведомлений===
+Boundary(MicroserviceMessage, "Микросервис уведомлений") {
 Container(ServiceMessage, "Сервис уведомлений", "Spring Boot", "Отправка SMS, push-уведомлений, шаблоны сообщений, управление рассылками")
+ContainerDb(DbServiceMessage, "БД уведомлений", "PostgreSQL", "Данные об уведомлениях")
+}
+
+'===Сервис заказов===
+Boundary(MicroserviceOrder, "Микросервис заказов") {
 Container(ServiceOrder, "Сервис заказов", "Spring Boot", "Управление жизненным циклом заказов, создание и отмена")
 note right of ServiceOrder
   <b>Оркестрация композитных операций</b>
@@ -42,18 +71,26 @@ note right of ServiceOrder
   3. Возвращает итоговый результат
   4. Публикует событие для фоновых операций
 end note
-
-Container(ServiceBonus, "Бонусная система", "Spring Boot", "Начисление и списание баллов, управление программой лояльности, история транзакций")
-Container(ServiceStatistics, "Сервис статистики", "Spring Boot", "Сбор и анализ бизнес-метрик, отчеты по продажам и доходам, KPI, аналитика")
-Container(ServiceDelivery, "Сервис доставки", "Spring Boot", "Управление доставками, маршрутизация, расчет сроков, статусы")
-ContainerDb(DbAutorisation, "БД пользователей", "PostgreSQL", "Данные о пользователях и бонусной программе")
-ContainerDb(DbServiceMessage, "БД уведомлений", "PostgreSQL", "Данные об уведомлениях")
 ContainerDb(DbOrders, "БД Заказов", "PostgreSQL", "Данные о заказах")
-ContainerDb(DbDelivery, "БД доставки", "PostgreSQL", "Данные о доставке")
-ContainerDb(DbMenu, "БД Меню", "PostgreSQL", "Данные о меню")
-ContainerDb(DbMain, "БД основная", "PostgreSQL", "Данные о заказах, продажах, доходах, расходах")
-ContainerDb(DbPayment, "БД оплата", "PostgreSQL", "Данные об оплате")
+}
+
+'===Бонусная система===
+Boundary(MicroserviceBonus, "Микросервис БС") {
+Container(ServiceBonus, "Бонусная система", "Spring Boot", "Начисление и списание баллов, управление программой лояльности, история транзакций")
 ContainerDb(DbBonus, "БД системы лояльности", "PostgreSQL", "Данные о программе лояльности")
+}
+
+'===Сервис статистики===
+Boundary(MicroserviceStatistics, "Микросервис статистики") {
+Container(ServiceStatistics, "Сервис статистики", "Spring Boot", "Сбор и анализ бизнес-метрик, отчеты по продажам и доходам, KPI, аналитика")
+ContainerDb(DbMain, "БД основная", "PostgreSQL", "Данные о заказах, продажах, доходах, расходах")
+}
+
+'===Сервис доставки===
+Boundary(MicroserviceDelivery, "Микросервис доставки") {
+Container(ServiceDelivery, "Сервис доставки", "Spring Boot", "Управление доставками, маршрутизация, расчет сроков, статусы")
+ContainerDb(DbDelivery, "БД доставки", "PostgreSQL", "Данные о доставке")
+}
 
 ContainerQueue(Broker, "Брокер сообщений", "Kafka", "Асинхронная коммуникация между сервисами")
 note left of Broker
