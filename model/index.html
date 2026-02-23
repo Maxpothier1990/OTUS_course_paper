@@ -406,10 +406,137 @@
 <li>заказ</li>
 <li>товар</li>
 <li>бонусная система</li>
+<li>меню</li>
+<li>комбобургер</li>
+<li>товар</li>
+<li>ингредиент</li>
+<li>корзина</li>
+<li>оплата</li>
+<li>бонуснаяСистема</li>
 </ul>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../out/class_diagram.svg"><img alt="" src="../out/class_diagram.svg"></a></p>
 <h2 id="_3"><span class="enumerate-headings-plugin enumerate-heading-plugin">6.2</span> Модель данных</h2>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../out/db_design.svg"><img alt="" src="../out/db_design.svg"></a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Микросервис</th>
+<th style="text-align: left;">Класс</th>
+<th style="text-align: left;">Атрибуты (с типами)</th>
+<th style="text-align: left;">Описание класса</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Сервис авторизации</strong></td>
+<td style="text-align: left;"><code>Клиент</code></td>
+<td style="text-align: left;"><code>id: UUID</code><br><code>phoneNumber: String</code><br><code>passwordHash: String</code><br><code>createdAt: DateTime</code><br><code>lastLogin: DateTime</code><br><code>isActive: Boolean</code><br><code>role: String</code></td>
+<td style="text-align: left;">Учётная запись пользователя (покупателя). Содержит данные для аутентификации и роли.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Сервис меню</strong></td>
+<td style="text-align: left;"><code>Меню</code></td>
+<td style="text-align: left;"><code>id: UUID</code><br><code>name: String</code><br><code>description: String</code><br><code>isActive: Boolean</code><br><code>validFrom: DateTime</code><br><code>validTo: DateTime</code></td>
+<td style="text-align: left;">Совокупность категорий и товаров, действующая в определённый период (например, сезонное меню).</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>КатегорияТовара</code></td>
+<td style="text-align: left;"><code>id: UUID</code><br><code>name: String</code><br><code>parentCategory: UUID</code><br><code>sortOrder: Integer</code></td>
+<td style="text-align: left;">Группировка товаров (бургеры, напитки, гарниры). Поддерживает вложенность.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>Товар</code></td>
+<td style="text-align: left;"><code>id: UUID</code><br><code>name: String</code><br><code>description: String</code><br><code>price: Decimal</code><br><code>photoUrl: String</code><br><code>isAvailable: Boolean</code><br><code>categoryId: UUID</code><br><code>recipeId: UUID</code></td>
+<td style="text-align: left;">Готовая позиция, доступная для заказа. Может быть простым блюдом или комбобургером (тогда <code>recipeId</code> указывает на рецепт комбо).</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>Ингредиент</code></td>
+<td style="text-align: left;"><code>id: UUID</code><br><code>name: String</code><br><code>proteins: Float</code><br><code>fats: Float</code><br><code>carbs: Float</code><br><code>calories: Integer</code><br><code>cost: Decimal</code><br><code>sortOrder: Integer</code><br><code>category: String</code><br><code>markupCoefficient: Float</code></td>
+<td style="text-align: left;">Составная часть блюда (булочка, котлета, соус). Хранит пищевую ценность и себестоимость.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>Комбобургер</code></td>
+<td style="text-align: left;"><code>id: UUID</code><br><code>description: String</code><br><code>basePrice: Decimal</code><br><code>markup: Decimal</code><br><code>calories: Integer</code><br><code>protein: Float</code><br><code>fat: Float</code><br><code>carbs: Float</code><br><code>photoUrl: String</code></td>
+<td style="text-align: left;">Специальный тип товара, собранный из ингредиентов. Является наследником (или частью) товара.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>Рецепт</code></td>
+<td style="text-align: left;"><code>id: UUID</code><br><code>productId: UUID</code><br><code>ingredientId: UUID</code><br><code>quantity: Integer</code><br><code>unit: String</code></td>
+<td style="text-align: left;">Связующая таблица: указывает, какие ингредиенты и в каком количестве входят в состав товара или комбобургера.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Сервис заказов</strong></td>
+<td style="text-align: left;"><code>Корзина</code></td>
+<td style="text-align: left;"><code>id: UUID</code><br><code>clientId: UUID</code><br><code>createdAt: DateTime</code><br><code>updatedAt: DateTime</code><br><code>status: String</code></td>
+<td style="text-align: left;">Временная корзина покупателя, в которой накапливаются товары до оформления заказа.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>ПозицияКорзины</code></td>
+<td style="text-align: left;"><code>id: UUID</code><br><code>cartId: UUID</code><br><code>productId: UUID</code><br><code>quantity: Integer</code><br><code>priceAtAddition: Decimal</code></td>
+<td style="text-align: left;">Отдельная позиция (товар) в корзине с ценой на момент добавления.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>Заказ</code></td>
+<td style="text-align: left;"><code>id: UUID</code><br><code>clientId: UUID</code><br><code>cartId: UUID</code><br><code>orderNumber: String</code><br><code>createdAt: DateTime</code><br><code>status: String</code><br><code>pickupMethod: String</code><br><code>pickupTime: DateTime</code><br><code>totalAmount: Decimal</code><br><code>bonusUsed: Integer</code><br><code>deliveryId: UUID</code></td>
+<td style="text-align: left;">Оформленный заказ. Содержит основную информацию о клиенте, сумме, способе получения и статусе.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>СтатусЗаказа</code></td>
+<td style="text-align: left;"><code>id: UUID</code><br><code>orderId: UUID</code><br><code>status: String</code><br><code>changedAt: DateTime</code><br><code>comment: String</code></td>
+<td style="text-align: left;">Журнал изменения статусов заказа (история).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Сервис оплаты</strong></td>
+<td style="text-align: left;"><code>Оплата</code></td>
+<td style="text-align: left;"><code>id: UUID</code><br><code>orderId: UUID</code><br><code>paymentMethod: String</code><br><code>cardToken: String</code><br><code>amount: Decimal</code><br><code>status: String</code><br><code>transactionId: String</code><br><code>fiscalId: String</code><br><code>paidAt: DateTime</code></td>
+<td style="text-align: left;">Транзакция оплаты по заказу. Может быть проведена разными способами (карта, наличные, бонусы).</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>Чек</code></td>
+<td style="text-align: left;"><code>id: UUID</code><br><code>paymentId: UUID</code><br><code>fiscalNumber: String</code><br><code>fiscalDocument: String</code><br><code>fiscalSign: String</code><br><code>ofdUrl: String</code><br><code>createdAt: DateTime</code></td>
+<td style="text-align: left;">Фискальный чек, сформированный после оплаты в соответствии с 54-ФЗ.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Бонусная система</strong></td>
+<td style="text-align: left;"><code>БонусныйСчет</code></td>
+<td style="text-align: left;"><code>id: UUID</code><br><code>clientId: UUID</code><br><code>balance: Integer</code><br><code>lifetimePoints: Integer</code><br><code>tier: String</code><br><code>updatedAt: DateTime</code></td>
+<td style="text-align: left;">Бонусный счёт клиента, хранит текущий баланс, уровень лояльности и общее количество накопленных баллов.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>БонуснаяТранзакция</code></td>
+<td style="text-align: left;"><code>id: UUID</code><br><code>accountId: UUID</code><br><code>orderId: UUID</code><br><code>amount: Integer</code><br><code>type: String</code><br><code>description: String</code><br><code>createdAt: DateTime</code></td>
+<td style="text-align: left;">Движение баллов по счёту: начисление, списание, сгорание.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>ПравилоЛояльности</code></td>
+<td style="text-align: left;"><code>id: UUID</code><br><code>name: String</code><br><code>accrualRate: Float</code><br><code>burnAfterDays: Integer</code><br><code>minOrderAmount: Decimal</code></td>
+<td style="text-align: left;">Настройки бонусной программы: коэффициент начисления, срок жизни баллов, минимальная сумма заказа для активации.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Сервис доставки</strong></td>
+<td style="text-align: left;"><code>Доставка</code></td>
+<td style="text-align: left;"><code>id: UUID</code><br><code>orderId: UUID</code><br><code>address: String</code><br><code>courierId: UUID</code><br><code>status: String</code><br><code>estimatedDeliveryTime: DateTime</code><br><code>actualDeliveryTime: DateTime</code><br><code>deliveryCost: Decimal</code></td>
+<td style="text-align: left;">Заказ на доставку. Связан с конкретным заказом и курьером, отслеживает статус и время.</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><code>Курьер</code></td>
+<td style="text-align: left;"><code>id: UUID</code><br><code>name: String</code><br><code>phone: String</code><br><code>vehicle: String</code><br><code>isActive: Boolean</code><br><code>currentLocation: String</code></td>
+<td style="text-align: left;">Данные курьера: контакты, транспорт, активность и текущее местоположение (для трекинга).</td>
+</tr>
+</tbody>
+</table>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
