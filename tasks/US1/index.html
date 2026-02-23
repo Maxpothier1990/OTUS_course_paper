@@ -416,16 +416,6 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#-">
-<span class="md-ellipsis">
-      
-        Тест-кейсы
-      
-    </span>
-</a>
-<nav aria-label="Тест-кейсы" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
 <a class="md-nav__link" href="#acceptance-criteria-1">
 <span class="md-ellipsis">
       
@@ -461,9 +451,6 @@
       
     </span>
 </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -610,9 +597,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="-"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.1</span> Тест-кейсы</h2>
-<h3 id="acceptance-criteria-1"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.1.1</span> Acceptance Criteria: 1. Возле каждой позиции в корзине есть кнопка удаления.</h3>
-<h4 id="test-case-1"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.1.1.1</span> Test case 1. Удаление одной позиции из корзины с несколькими товарами</h4>
+<p>Тест-кейсы:</p>
+<h2 id="acceptance-criteria-1"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.1</span> Acceptance Criteria: 1. Возле каждой позиции в корзине есть кнопка удаления.</h2>
+<h3 id="test-case-1"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.1.1</span> Test case 1. Удаление одной позиции из корзины с несколькими товарами</h3>
 <p>Тип: Базовый
 Предусловие: Пользователь находится в корзине. В корзине добавлено 2 товара: "Гамбургер" (100 руб) и "Чизбургер" (150 руб). Итоговая сумма = 250 руб.
 Шаги:
@@ -624,7 +611,7 @@
 <p>В корзине остается только товар "Чизбургер".</p>
 <p>Итоговая сумма пересчиталась и составляет 150 руб.</p>
 <p>Кнопка "Оплатить" активна.</p>
-<h4 id="test-case-2"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.1.1.2</span> Test case 2. Отмена удаления позиции</h4>
+<h3 id="test-case-2"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.1.2</span> Test case 2. Отмена удаления позиции</h3>
 <p>Тип: Альтернативный
 Предусловие: Пользователь находится в корзине. В корзине добавлен товар "Гамбургер".
 Шаги:</p>
@@ -635,7 +622,7 @@
 <p>Товар "Гамбургер" остается в корзине.</p>
 <p>Сумма заказа не изменилась.</p>
 <p>Пользователь остается на странице корзины.</p>
-<h4 id="test-case-3"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.1.1.3</span> Test case 3. Удаление всех позиций (очистка корзины)</h4>
+<h3 id="test-case-3"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.1.3</span> Test case 3. Удаление всех позиций (очистка корзины)</h3>
 <p>Тип: Негативный (с точки зрения наличия товаров в корзине) / Граничный
 Предусловие: Пользователь находится в корзине. В корзине добавлен один товар "Гамбургер".
 Шаги:</p>
