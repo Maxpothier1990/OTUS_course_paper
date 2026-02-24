@@ -484,6 +484,17 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    User Story 21
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -494,6 +505,98 @@
     
   </span>
 </a>
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceptance-criteria-1-">
+<span class="md-ellipsis">
+      
+        Acceptance Criteria 1: В админ-панели доступен список всех блюд с возможностью редактирования состава (ингредиенты, описание).
+      
+    </span>
+</a>
+<nav aria-label="Acceptance Criteria 1: В админ-панели доступен список всех блюд с возможностью редактирования состава (ингредиенты, описание)." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-43">
+<span class="md-ellipsis">
+      
+        Test case 43. Редактирование состава и цены блюда
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-44">
+<span class="md-ellipsis">
+      
+        Test case 44. Блюдо заблокировано другим пользователем на редактирование состава и цены
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceptance-criteria-2">
+<span class="md-ellipsis">
+      
+        Acceptance Criteria 2: Можно скрыть/показать блюдо.
+      
+    </span>
+</a>
+<nav aria-label="Acceptance Criteria 2: Можно скрыть/показать блюдо." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-45">
+<span class="md-ellipsis">
+      
+        Test case 45. Скрыть блюдо из меню
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-46">
+<span class="md-ellipsis">
+      
+        Test case 46. Блюдо заблокировано другим пользователем на редактирование
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceptance-criteria-3">
+<span class="md-ellipsis">
+      
+        Acceptance Criteria 3: Изменения сохраняются и мгновенно отображаются в клиентских интерфейсах.
+      
+    </span>
+</a>
+<nav aria-label="Acceptance Criteria 3: Изменения сохраняются и мгновенно отображаются в клиентских интерфейсах." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-47">
+<span class="md-ellipsis">
+      
+        Test case 47. Изменение состава блюда в реальном времени.
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../US26/">
@@ -518,7 +621,79 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="user-story-21"><span class="enumerate-headings-plugin enumerate-heading-plugin">19.</span> User Story 21</h1>
-<p>| <strong>US21</strong> | Я как <strong>менеджер по ассортименту</strong> хочу <strong>настроить состав меню</strong>, чтобы <strong>покупатель не заказал отсутствующую позицию</strong>. | Высокий | MVP | 1. В админ-панели доступен список всех блюд с возможностью редактирования состава (ингредиенты, описание).<br>2. Можно скрыть/показать блюдо.<br>3. Изменения сохраняются и мгновенно отображаются в клиентских интерфейсах.<br>4. Нельзя сохранить пустые обязательные поля. |</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>User Story</th>
+<th>Приоритет</th>
+<th>Версия</th>
+<th>Acceptance Criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>US21</strong></td>
+<td>Я как <strong>менеджер по ассортименту</strong> хочу <strong>настроить состав меню</strong>, чтобы <strong>покупатель не заказал отсутствующую позицию</strong>.</td>
+<td>Высокий</td>
+<td>MVP</td>
+<td>1. В админ-панели доступен список всех блюд с возможностью редактирования состава (ингредиенты, описание).<br>2. Можно скрыть/показать блюдо.<br>3. Изменения сохраняются и мгновенно отображаются в клиентских интерфейсах.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Тест-кейсы:</strong></p>
+<h2 id="acceptance-criteria-1-"><span class="enumerate-headings-plugin enumerate-heading-plugin">19.1</span> Acceptance Criteria 1: В админ-панели доступен список всех блюд с возможностью редактирования состава (ингредиенты, описание).</h2>
+<h3 id="test-case-43"><span class="enumerate-headings-plugin enumerate-heading-plugin">19.1.1</span> Test case 43. Редактирование состава и цены блюда</h3>
+<p><strong>Тип:</strong> Базовый<br>
+<strong>Предусловие:</strong> Пользователь находится на стартовой странице  </p>
+<p><strong>Шаги:</strong><br>
+1. Открыть начальную станицу<br>
+2. Выбрать блюдо “Гамбургер”<br>
+3. Изменить цену с 100 на 110, добавить в описание ингредиент "Новый соус".<br>
+4. Нажать кнопку "Сохранить". </p>
+<p><strong>OP:</strong><br>
+1. Состав блюда изменен</p>
+<h3 id="test-case-44"><span class="enumerate-headings-plugin enumerate-heading-plugin">19.1.2</span> Test case 44. Блюдо заблокировано другим пользователем на редактирование состава и цены</h3>
+<p><strong>Тип:</strong> Негативный<br>
+<strong>Предусловие:</strong> Пользователь находится на стартовой странице  </p>
+<p><strong>Шаги:</strong><br>
+1. Открыть начальную станицу<br>
+2. Выбрать блюдо “Гамбургер”<br>
+3. Изменить цену с 100 на 110, добавить в описание ингредиент "Новый соус".<br>
+4. Нажать кнопку "Сохранить". </p>
+<p><strong>OP:</strong><br>
+1. Сообщение "Блюдо заблокировано на редактирование другим пользователем"</p>
+<h2 id="acceptance-criteria-2"><span class="enumerate-headings-plugin enumerate-heading-plugin">19.2</span> Acceptance Criteria 2: Можно скрыть/показать блюдо.</h2>
+<h3 id="test-case-45"><span class="enumerate-headings-plugin enumerate-heading-plugin">19.2.1</span> Test case 45. Скрыть блюдо из меню</h3>
+<p><strong>Тип:</strong> Базовый<br>
+<strong>Предусловие:</strong> Пользователь находится на стартовой странице  </p>
+<p><strong>Шаги:</strong><br>
+1. Открыть начальную станицу<br>
+2. Выбрать блюдо “Гамбургер”<br>
+3. Изменить стутус видимости на скрыто.<br>
+4. Нажать кнопку "Сохранить".  </p>
+<p><strong>OP:</strong><br>
+1. Состав блюда изменен</p>
+<h3 id="test-case-46"><span class="enumerate-headings-plugin enumerate-heading-plugin">19.2.2</span> Test case 46. Блюдо заблокировано другим пользователем на редактирование</h3>
+<p><strong>Тип:</strong> Негативный<br>
+<strong>Предусловие:</strong> Пользователь находится на стартовой странице  </p>
+<p><strong>Шаги:</strong><br>
+1. Открыть начальную станицу<br>
+2. Выбрать блюдо “Гамбургер”<br>
+3. Изменить стутус видимости на скрыто.<br>
+4. Нажать кнопку "Сохранить".  </p>
+<p><strong>OP:</strong><br>
+1. Сообщение "Блюдо заблокировано на редактирование другим пользователем"</p>
+<h2 id="acceptance-criteria-3"><span class="enumerate-headings-plugin enumerate-heading-plugin">19.3</span> Acceptance Criteria 3: Изменения сохраняются и мгновенно отображаются в клиентских интерфейсах.</h2>
+<h3 id="test-case-47"><span class="enumerate-headings-plugin enumerate-heading-plugin">19.3.1</span> Test case 47. Изменение состава блюда в реальном времени.</h3>
+<p><strong>Тип:</strong> Базовый<br>
+<strong>Предусловие:</strong> Пользователь находится на стартовой странице  </p>
+<p><strong>Шаги:</strong><br>
+1. Коснуться экрана стенда в любом месте<br>
+2. Выбрать блюдо “Гамбургер”<br>
+3. Попросить коллегу изменить цену блюда "Гамбургер" с 100.00 руб на 150.00 руб и сохранить.  </p>
+<p><strong>OP:</strong><br>
+1. Через 10 сек цена блюда "Гамбургер" изменится с 100.00 руб на 150.00 руб</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
