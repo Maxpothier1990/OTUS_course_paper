@@ -412,6 +412,17 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    User Story 03
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -422,6 +433,147 @@
     
   </span>
 </a>
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceptance-criteria-1">
+<span class="md-ellipsis">
+      
+        Acceptance Criteria 1: В корзине отображается список добавленных позиций с фото, названием, количеством, ценой за единицу и общей суммой.
+      
+    </span>
+</a>
+<nav aria-label="Acceptance Criteria 1: В корзине отображается список добавленных позиций с фото, названием, количеством, ценой за единицу и общей суммой." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-14">
+<span class="md-ellipsis">
+      
+        Test case 14. Открытие страницы с корзиной с добавленными товарами
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceptance-criteria-2">
+<span class="md-ellipsis">
+      
+        Acceptance Criteria 2: Итоговая стоимость заказа пересчитывается при добавлении ед. количества товара.
+      
+    </span>
+</a>
+<nav aria-label="Acceptance Criteria 2: Итоговая стоимость заказа пересчитывается при добавлении ед. количества товара." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-15">
+<span class="md-ellipsis">
+      
+        Test case 15. Пересчет стоимости заказа при добавлении товара
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-16">
+<span class="md-ellipsis">
+      
+        Test case 16. Пересчет стоимости заказа при добавлении этого же товара
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-17">
+<span class="md-ellipsis">
+      
+        Test case 17. Количество товара невозможно увеличить по причине отсутствия единицы товара на складе.
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceptance-criteria-3">
+<span class="md-ellipsis">
+      
+        Acceptance Criteria 3: Итоговая стоимость заказа пересчитывается при удалении ед. количества товара.
+      
+    </span>
+</a>
+<nav aria-label="Acceptance Criteria 3: Итоговая стоимость заказа пересчитывается при удалении ед. количества товара." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-18">
+<span class="md-ellipsis">
+      
+        Test case 18. Пересчет стоимости заказа при уменьшении ед. товара
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-19">
+<span class="md-ellipsis">
+      
+        Test case 19. Удаление единицы товара в корзине через удаление товара целиком
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-20">
+<span class="md-ellipsis">
+      
+        Test case 20. Попытка уменьшить количество товара при отсутствии связи с сервером.
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceptance-criteria-4">
+<span class="md-ellipsis">
+      
+        Acceptance Criteria 4: Если блюдо отсутствует (нет в наличии), то выводится сообщение.
+      
+    </span>
+</a>
+<nav aria-label="Acceptance Criteria 4: Если блюдо отсутствует (нет в наличии), то выводится сообщение." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-21">
+<span class="md-ellipsis">
+      
+        Test case 21. Уведомление при невозможности добавить товар
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-22">
+<span class="md-ellipsis">
+      
+        Test case 22. Уведомление при невозможности добавить товар
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../US4/">
@@ -518,7 +670,124 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="user-story-03"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.</span> User Story 03</h1>
-<p>| <strong>US03</strong> | Я как <strong>посетитель</strong> хочу <strong>ознакомиться с наполнением корзины</strong>, чтобы <strong>видеть выбранные позиции в своем заказе</strong>. | Высокий | MVP | 1. В корзине отображается список добавленных позиций с фото, названием, количеством, ценой за единицу и общей суммой.<br>2. Итоговая стоимость заказа пересчитывается при любых изменениях.<br>3. Есть кнопка «Оплатить». |</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>User Story</th>
+<th>Приоритет</th>
+<th>Версия</th>
+<th>Acceptance Criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>US03</strong></td>
+<td>Я как <strong>посетитель</strong> хочу <strong>ознакомиться с наполнением корзины</strong>, чтобы <strong>видеть выбранные позиции в своем заказе</strong>.</td>
+<td>Высокий</td>
+<td>MVP</td>
+<td>1. В корзине отображается список добавленных позиций с фото, названием, количеством, ценой за единицу и общей суммой.<br>2. Итоговая стоимость заказа пересчитывается при добавлении ед. количества товара.<br>3. Итоговая стоимость заказа пересчитывается при удалении ед. количества товара.<br>4. Есть кнопка «Оплатить».</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Тест-кейсы:</strong></p>
+<h2 id="acceptance-criteria-1"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.1</span> Acceptance Criteria 1: В корзине отображается список добавленных позиций с фото, названием, количеством, ценой за единицу и общей суммой.</h2>
+<h3 id="test-case-14"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.1.1</span> Test case 14. Открытие страницы с корзиной с добавленными товарами</h3>
+<p><strong>Тип:</strong> Базовый<br>
+<strong>Предусловие:</strong> Пользователь находится на стартовой странице  </p>
+<p><strong>Шаги:</strong><br>
+1. Коснуться экрана в любом месте<br>
+2. Выбрать блюдо “Гамбургер”<br>
+3. Нажать на кнопку “Добавить”<br>
+4. Нажать на кнопку “В корзину”   </p>
+<p><strong>OP:</strong><br>
+1. Открыта страница с корзиной<br>
+2. Добавлен товар “Гамбургер” с фотографией товара, названием, количеством, ценой за единицу  </p>
+<h2 id="acceptance-criteria-2"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.2</span> Acceptance Criteria 2: Итоговая стоимость заказа пересчитывается при добавлении ед. количества товара.</h2>
+<h3 id="test-case-15"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.2.1</span> Test case 15. Пересчет стоимости заказа при добавлении товара</h3>
+<p><strong>Тип:</strong> Базовый<br>
+<strong>Предусловие:</strong> Пользователь находится на стартовой странице  </p>
+<p><strong>Шаги:</strong><br>
+1. Коснуться экрана в любом месте<br>
+2. Выбрать блюдо “Гамбургер”<br>
+3. Нажать на кнопку “Добавить”
+4. Нажать на кнопку “В корзину”<br>
+5. В строке с товаром "Гамбургер" нажать на кнопку “Увеличить количество заказываемого блюда на 1 ед.”  </p>
+<p><strong>OP:</strong><br>
+1. Количество товара “Гамбургер” было X, стало X+1<br>
+2. В поле “сумма к оплате” сумма за товар пересчиталась<br>
+3. В строке товара значение количества обновилось  </p>
+<h3 id="test-case-16"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.2.2</span> Test case 16. Пересчет стоимости заказа при добавлении этого же товара</h3>
+<p><strong>Тип:</strong> Альтернативный<br>
+<strong>Предусловие:</strong> Пользователь находится на стартовой странице  </p>
+<p><strong>Шаги:</strong><br>
+1. Коснуться экрана в любом месте<br>
+2. Выбрать блюдо “Гамбургер”<br>
+3. Нажать на кнопку “Добавить”<br>
+4. Выбрать этот же товар повторно<br>
+5. Нажать на кнопку “Добавить”<br>
+6. Нажать на кнопку “В корзину”  </p>
+<p><strong>OP:</strong><br>
+1. Количество товара “Гамбургер” было X, стало X+1<br>
+2. В поле “сумма к оплате” сумма за товар пересчиталась<br>
+3. В строке товара значение количества обновилось  </p>
+<h3 id="test-case-17"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.2.3</span> Test case 17. Количество товара невозможно увеличить по причине отсутствия единицы товара на складе.</h3>
+<p><strong>Тип:</strong> Негативный<br>
+<strong>Предусловие:</strong> Пользователь находится на странице с корзиной. В корзине добавлен товар “Гамбургер”. Количество товара “Гамбургер” = 1 ед  </p>
+<p><strong>Шаги:</strong><br>
+1. Нажать на кнопку “Увеличить количество заказываемого блюда на 1 ед.”  </p>
+<p><strong>OP:</strong><br>
+1. Сообщение “Товар отсутствует на складе”</p>
+<h2 id="acceptance-criteria-3"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.3</span> Acceptance Criteria 3: Итоговая стоимость заказа пересчитывается при удалении ед. количества товара.</h2>
+<h3 id="test-case-18"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.3.1</span> Test case 18. Пересчет стоимости заказа при уменьшении ед. товара</h3>
+<p><strong>Тип:</strong> Базовый<br>
+<strong>Предусловие:</strong> Пользователь находится на странице с корзиной. В корзине добавлен товар “Гамбургер”. Количество товара “Гамбургер” = 2 ед  </p>
+<p><strong>Шаги:</strong><br>
+1. Нажать на кнопку “Уменьшить количество заказываемого блюда на 1 ед”  </p>
+<p><strong>OP:</strong><br>
+1. Количество товара “Гамбургер” было X, стало X-1<br>
+2. В поле “сумма к оплате” сумма за товар пересчиталась<br>
+3. В строке товара значение количества обновилось  </p>
+<h3 id="test-case-19"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.3.2</span> Test case 19. Удаление единицы товара в корзине через удаление товара целиком</h3>
+<p><strong>Тип:</strong> Альтернативный<br>
+<strong>Предусловие:</strong> Пользователь находится на странице с корзиной. В корзину добавлено 2 единица товара “Гамбургер”. Количество товара “Гамбургер” = 2 ед  </p>
+<p><strong>Шаги:</strong><br>
+1. Нажать на кнопку “Удалить товар”  </p>
+<p><strong>OP:</strong><br>
+1. Товар удален из корзины<br>
+2. В поле “сумма к оплате” сумма за товар пересчиталась<br>
+3. В строке товара значение количества обновилось  </p>
+<h3 id="test-case-20"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.3.3</span> Test case 20. Попытка уменьшить количество товара при отсутствии связи с сервером.</h3>
+<p><strong>Тип:</strong> Негативный<br>
+<strong>Предусловие:</strong> Пользователь находится на странице с корзиной. В корзине добавлен товар “Гамбургер”  </p>
+<p><strong>Шаги:</strong><br>
+1. Эмулировать потерю соединения с интернетом<br>
+2. Нажать на кнопку “Уменьшить количество заказываемого блюда на 1 ед”  </p>
+<p><strong>OP:</strong><br>
+1. Товар НЕ уменьшен<br>
+2. Появляется сообщение об ошибке: "Не удалось удалить товар. Проверьте подключение к интернету"<br>
+3. Товар "Гамбургер" по-прежнему отображается в корзине</p>
+<h2 id="acceptance-criteria-4"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.4</span> Acceptance Criteria 4: Если блюдо отсутствует (нет в наличии), то выводится сообщение.</h2>
+<h3 id="test-case-21"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.4.1</span> Test case 21. Уведомление при невозможности добавить товар</h3>
+<p><strong>Тип:</strong> Базовый<br>
+<strong>Предусловие:</strong> Пользователь находится на стартовой странице  </p>
+<p><strong>Шаги:</strong><br>
+1. Коснуться экрана в любом месте<br>
+2. Выбрать блюдо “Гамбургер”<br>
+3. Нажать на кнопку “Добавить”  </p>
+<p><strong>OP:</strong><br>
+1. Сообщение “Товар отсутствует на складе”</p>
+<h3 id="test-case-22"><span class="enumerate-headings-plugin enumerate-heading-plugin">13.4.2</span> Test case 22. Уведомление при невозможности добавить товар</h3>
+<p><strong>Тип:</strong> Альтернативный<br>
+<strong>Предусловие:</strong> Пользователь находится на стартовой странице  </p>
+<p><strong>Шаги:</strong><br>
+1. Коснуться экрана в любом месте<br>
+2. Выбрать блюдо “Гамбургер”<br>
+3. Нажать на кнопку “Добавить”
+4. Нажать на кнопку “В корзину”<br>
+5. В строке с товаром "Гамбургер" нажать на кнопку “Увеличить количество заказываемого блюда на 1 ед.”  </p>
+<p><strong>OP:</strong><br>
+1. Сообщение “Товар отсутствует на складе”</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
