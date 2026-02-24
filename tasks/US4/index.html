@@ -424,6 +424,17 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    User Story 04
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -434,6 +445,94 @@
     
   </span>
 </a>
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceptance-criteria-1">
+<span class="md-ellipsis">
+      
+        Acceptance Criteria: 1. Возле каждой позиции в корзине есть кнопка удаления.
+      
+    </span>
+</a>
+<nav aria-label="Acceptance Criteria: 1. Возле каждой позиции в корзине есть кнопка удаления." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-1">
+<span class="md-ellipsis">
+      
+        Test case 1. Удаление товара из корзины
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-2-0">
+<span class="md-ellipsis">
+      
+        Test case 2. Удаление товара из корзины путем уменьшения единицы товара до 0
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-3">
+<span class="md-ellipsis">
+      
+        Test case 3. Удаление товара (подарка) из корзины путем удаления акционного товара
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-4">
+<span class="md-ellipsis">
+      
+        Test case 4. Попытка удалить товар при отсутствии связи с сервером
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceptance-criteria-2">
+<span class="md-ellipsis">
+      
+        Acceptance Criteria: 2. После подтверждения позиция исчезает, сумма пересчитывается.
+      
+    </span>
+</a>
+<nav aria-label="Acceptance Criteria: 2. После подтверждения позиция исчезает, сумма пересчитывается." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-5">
+<span class="md-ellipsis">
+      
+        Test case 5. Удаление одного товара из корзины
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceptance-criteria-3">
+<span class="md-ellipsis">
+      
+        Acceptance Criteria: 3. При удалении всех позиций открывается окно меню.
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../US7/">
@@ -518,7 +617,72 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="user-story-04"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.</span> User Story 04</h1>
-<p>| <strong>US04</strong> | Я как <strong>посетитель</strong> хочу <strong>ознакомиться с наполнением корзины</strong>, чтобы <strong>видеть выбранные позиции в своем заказе</strong>. | Высокий | MVP | 1. В корзине отображается список добавленных позиций с фото, названием, количеством, ценой за единицу и общей суммой.<br>2. Итоговая стоимость заказа пересчитывается при любых изменениях.<br>3. Есть кнопка «Оплатить». |</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>User Story</th>
+<th>Приоритет</th>
+<th>Версия</th>
+<th>Acceptance Criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>US01</strong></td>
+<td>Я как <strong>посетитель</strong> хочу <strong>удалить ранее добавленные позиции</strong>, чтобы <strong>актуализировать корзину</strong>.</td>
+<td>Высокий</td>
+<td>MVP</td>
+<td>1. Возле каждой позиции в корзине есть кнопка удаления.<br>2. После подтверждения позиция исчезает, сумма пересчитывается.<br>3. При удалении всех позиций открывается окно меню.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Тест-кейсы:</strong></p>
+<h2 id="acceptance-criteria-1"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.1</span> Acceptance Criteria: 1. Возле каждой позиции в корзине есть кнопка удаления.</h2>
+<h3 id="test-case-1"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.1.1</span> Test case 1. Удаление товара из корзины</h3>
+<p>Тип: Базовый  </p>
+<p>Предусловие: Пользователь находится на странице с корзиной. В корзине добавлен товар “Гамбургер”. Количество товара “Гамбургер” = 2 ед</p>
+<p>Шаги:<br>
+1. Нажать на кнопку “Удалить товар”</p>
+<p>OP:<br>
+1. Товар удален из корзины<br>
+2. Автоматически открыто окно меню</p>
+<h3 id="test-case-2-0"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.1.2</span> Test case 2. Удаление товара из корзины путем уменьшения единицы товара до 0</h3>
+<p>Тип: Альтернативный  </p>
+<p>Предусловие: Пользователь находится на странице с корзиной. В корзине добавлен товар “Гамбургер”. Количество товара “Гамбургер” = 1 ед  </p>
+<p>Шаги:<br>
+1. Нажать на кнопку “Уменьшить количество заказываемого блюда на 1 ед”  </p>
+<p>OP:<br>
+1. Товар удален из корзины<br>
+2. Автоматически открыто окно меню</p>
+<h3 id="test-case-3"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.1.3</span> Test case 3. Удаление товара (подарка) из корзины путем удаления акционного товара</h3>
+<p>Тип: Альтернативный  </p>
+<p>Предусловие: Пользователь находится на странице с корзиной. Добавлен акционный товар “Комбо-бургер” и “Акционный стакан”. Количество товара “Гамбургер” = 1 ед., количество товара “Акционный стакан” = 1 ед.  </p>
+<p>Шаги:<br>
+1. Нажать на кнопку “Удалить единицу товара” в товаре “Комбо-бургер”  </p>
+<p>OP:<br>
+1. Оба товара удалены из корзины<br>
+2. Автоматически открыто окно меню</p>
+<h3 id="test-case-4"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.1.4</span> Test case 4. Попытка удалить товар при отсутствии связи с сервером</h3>
+<p>Тип: Негативный<br>
+Предусловие: Пользователь находится на странице с корзиной. В корзине добавлен товар “Гамбургер”  </p>
+<p>Шаги:<br>
+1. Эмулировать потерю соединения с интернетом<br>
+2. Нажать на кнопку "Удалить единицу товара"  </p>
+<p>OP:<br>
+1. Товар НЕ удален из корзины<br>
+2. Появляется сообщение об ошибке: "Не удалось удалить товар. Проверьте подключение к интернету"<br>
+3. Товар "Гамбургер" по-прежнему отображается в корзине</p>
+<h2 id="acceptance-criteria-2"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.2</span> Acceptance Criteria: 2. После подтверждения позиция исчезает, сумма пересчитывается.</h2>
+<h3 id="test-case-5"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.2.1</span> Test case 5. Удаление одного товара из корзины</h3>
+<p>Тип: Базовый  </p>
+<p>Предусловие: Пользователь находится на странице с корзиной. В корзине добавлен товар “Гамбургер”. Количество товара “Гамбургер” = 2 ед. Цена за гамбургер = 100.00 руб, цена за Чизбургер = 150.50 руб</p>
+<p>Шаги:<br>
+1. Нажать на кнопку “Удалить товар”</p>
+<p>OP:<br>
+1. Товар удален из корзины<br>
+2. Автоматически открыто окно меню</p>
+<h2 id="acceptance-criteria-3"><span class="enumerate-headings-plugin enumerate-heading-plugin">14.3</span> Acceptance Criteria: 3. При удалении всех позиций открывается окно меню.</h2>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
