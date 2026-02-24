@@ -5,7 +5,7 @@
 <link href="../US1/" rel="prev">
 <link href="../US3/" rel="next">
 <link href="../../assets/images/favicon.png" rel="icon">
-<meta content="mkdocs-1.6.1, mkdocs-material-9.7.2" name="generator">
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.3" name="generator">
 <title>User Story 02 - OTUS_COURSE_PAPER</title>
 <link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet">
 <link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet">
@@ -400,6 +400,17 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    User Story 02
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -410,6 +421,54 @@
     
   </span>
 </a>
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceptance-criteria-1">
+<span class="md-ellipsis">
+      
+        Acceptance Criteria 1: При нажатии «В корзину» блюдо появляется в корзине.
+      
+    </span>
+</a>
+<nav aria-label="Acceptance Criteria 1: При нажатии «В корзину» блюдо появляется в корзине." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-9">
+<span class="md-ellipsis">
+      
+        Test case 9. Открытие страницы с корзиной
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-10">
+<span class="md-ellipsis">
+      
+        Test case 10. Возврат на страницу "меню"
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-11">
+<span class="md-ellipsis">
+      
+        Test case 11. Попытка открыть страницу "меню" при отсутствии связи с сервером
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../US3/">
@@ -518,7 +577,50 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="user-story-02"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.</span> User Story 02</h1>
-<p>| <strong>US02</strong> | Я как <strong>посетитель</strong> хочу <strong>выполнить подбор товаров</strong>, чтобы <strong>совершить покупку</strong>. | Высокий | MVP | 1. При нажатии «Добавить в корзину» блюдо появляется в корзине.<br>2. Счётчик товаров в иконке корзины увеличивается.<br>3. Если блюдо отсутствует (нет в наличии), кнопка неактивна и выводится сообщение.<br> |</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>User Story</th>
+<th>Приоритет</th>
+<th>Версия</th>
+<th>Acceptance Criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>US02</strong></td>
+<td>Я как <strong>посетитель</strong> хочу <strong>выполнить подбор товаров</strong>, чтобы <strong>совершить покупку</strong>.</td>
+<td>Высокий</td>
+<td>MVP</td>
+<td>1. При нажатии «В корзину» блюдо появляется в корзине.<br>2. Счётчик товаров в иконке корзины увеличивается.<br>3. Если блюдо отсутствует (нет в наличии), кнопка неактивна и выводится сообщение.<br></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Тест-кейсы:</strong></p>
+<h2 id="acceptance-criteria-1"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.1</span> Acceptance Criteria 1: При нажатии «В корзину» блюдо появляется в корзине.</h2>
+<h3 id="test-case-9"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.1.1</span> Test case 9. Открытие страницы с корзиной</h3>
+<p><strong>Тип:</strong> Базовый<br>
+<strong>Предусловие:</strong> Пользователь находится на стартовой странице  </p>
+<p><strong>Шаги:</strong><br>
+1. Коснуться экрана в любом месте<br>
+<strong>ОР:</strong> Наличие кнопки “В корзину”<br>
+2. Выбрать блюдо “Гамбургер”<br>
+3. Нажать на кнопку “Добавить”<br>
+4. Нажать на кнопку “В корзину”   </p>
+<p><strong>OP:</strong><br>
+1. Открыта страница с корзиной<br>
+2. Добавлен товар “Гамбургер”  </p>
+<h3 id="test-case-10"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.1.2</span> Test case 10. Возврат на страницу "меню"</h3>
+<p><strong>Тип:</strong> Альтернативный<br>
+<strong>Предусловие:</strong> Пользователь находится на странице с корзиной  </p>
+<p><strong>Шаги:</strong><br>
+1. Нажать на кнопку "Отмена"  </p>
+<p><strong>OP:</strong><br>
+1. Открыта страница "меню"</p>
+<h3 id="test-case-11"><span class="enumerate-headings-plugin enumerate-heading-plugin">12.1.3</span> Test case 11. Попытка открыть страницу "меню" при отсутствии связи с сервером</h3>
+<p><strong>Тип:</strong> Негативный<br>
+<strong>Предусловие:</strong> Пользователь находится на стартовой странице  </p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
