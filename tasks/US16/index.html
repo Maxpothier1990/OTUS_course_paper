@@ -448,6 +448,17 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    User Story 16
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -458,6 +469,98 @@
     
   </span>
 </a>
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceptance-criteria-1">
+<span class="md-ellipsis">
+      
+        Acceptance Criteria: 1. После оплаты на экране отображается номер заказа.
+      
+    </span>
+</a>
+<nav aria-label="Acceptance Criteria: 1. После оплаты на экране отображается номер заказа." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-32">
+<span class="md-ellipsis">
+      
+        Test case 32. Отображение номера заказа
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceptance-criteria-2">
+<span class="md-ellipsis">
+      
+        Acceptance Criteria: 2. Есть возможность распечатать талон в терминале.
+      
+    </span>
+</a>
+<nav aria-label="Acceptance Criteria: 2. Есть возможность распечатать талон в терминале." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-33">
+<span class="md-ellipsis">
+      
+        Test case 33. Печать талона с номером заказа
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-34">
+<span class="md-ellipsis">
+      
+        Test case 34. Печать талона с номером заказа
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceptance-criteria-3">
+<span class="md-ellipsis">
+      
+        Acceptance Criteria: 3. Заказ отправляется на кухню, система фиксирует время начала приготовления.
+      
+    </span>
+</a>
+<nav aria-label="Acceptance Criteria: 3. Заказ отправляется на кухню, система фиксирует время начала приготовления." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-35">
+<span class="md-ellipsis">
+      
+        Test case 35. Печать талона с номером заказа
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-36">
+<span class="md-ellipsis">
+      
+        Test case 36. Ошибка формирования заказа при отсутствии связи с сервером
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../US19/">
@@ -518,7 +621,76 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="user-story-16"><span class="enumerate-headings-plugin enumerate-heading-plugin">16.</span> User Story 16</h1>
-<p>| <strong>US16</strong> | Я как <strong>посетитель</strong> хочу <strong>получить талон с номером заказа</strong>, чтобы <strong>получить именно свой заказ,  не держать в голове номер заказа</strong>. | Высокий | MVP | 1. После оплаты на экране отображается номер заказа.<br>2. Есть возможность распечатать талон в терминале.<br>3. Заказ отправляется на кухню, система фиксирует время начала приготовления. |</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>User Story</th>
+<th>Приоритет</th>
+<th>Версия</th>
+<th>Acceptance Criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>US16</strong></td>
+<td>Я как <strong>посетитель</strong> хочу <strong>получить талон с номером заказа</strong>, чтобы <strong>получить именно свой заказ,  не держать в голове номер заказа</strong>.</td>
+<td>Высокий</td>
+<td>MVP</td>
+<td>1. После оплаты на экране отображается номер заказа.<br>2. Есть возможность распечатать талон в терминале.<br>3. Заказ отправляется на кухню, система фиксирует время начала приготовления.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Тест-кейсы:</strong></p>
+<h2 id="acceptance-criteria-1"><span class="enumerate-headings-plugin enumerate-heading-plugin">16.1</span> Acceptance Criteria: 1. После оплаты на экране отображается номер заказа.</h2>
+<h3 id="test-case-32"><span class="enumerate-headings-plugin enumerate-heading-plugin">16.1.1</span> Test case 32. Отображение номера заказа</h3>
+<p><strong>Тип:</strong> Базовый<br>
+<strong>Предусловие:</strong> Пользователь находится на странице выбора варианта оплаты.  </p>
+<p><strong>Шаги:</strong><br>
+1. Нажать на кнопку “Наличные”<br>
+2. Внести наличные в терминал приема наличных денежных средств  </p>
+<p><strong>OP:</strong><br>
+1. На экране отображен номер заказа</p>
+<h2 id="acceptance-criteria-2"><span class="enumerate-headings-plugin enumerate-heading-plugin">16.2</span> Acceptance Criteria: 2. Есть возможность распечатать талон в терминале.</h2>
+<h3 id="test-case-33"><span class="enumerate-headings-plugin enumerate-heading-plugin">16.2.1</span> Test case 33. Печать талона с номером заказа</h3>
+<p><strong>Тип:</strong> Базовый<br>
+<strong>Предусловие:</strong> Пользователь находится на странице выбора варианта оплаты.  </p>
+<p><strong>Шаги:</strong><br>
+1. Нажать на кнопку “Наличные”<br>
+2. Внести наличные в терминал приема наличных денежных средств  </p>
+<p><strong>OP:</strong><br>
+1. На экране отображен номер заказа  <br>
+2. Терминал распечатывает талон с номером заказа</p>
+<h3 id="test-case-34"><span class="enumerate-headings-plugin enumerate-heading-plugin">16.2.2</span> Test case 34. Печать талона с номером заказа</h3>
+<p><strong>Тип:</strong> Негативный<br>
+<strong>Предусловие:</strong> Пользователь находится на странице выбора варианта оплаты.  </p>
+<p><strong>Шаги:</strong><br>
+1. Нажать на кнопку “Наличные”<br>
+2. Внести наличные в терминал приема наличных денежных средств  </p>
+<p><strong>OP:</strong><br>
+1. На экране отображен номер заказа<br>
+2. Сообщение на терминале "Закончилась бумага"</p>
+<h2 id="acceptance-criteria-3"><span class="enumerate-headings-plugin enumerate-heading-plugin">16.3</span> Acceptance Criteria: 3. Заказ отправляется на кухню, система фиксирует время начала приготовления.</h2>
+<h3 id="test-case-35"><span class="enumerate-headings-plugin enumerate-heading-plugin">16.3.1</span> Test case 35. Печать талона с номером заказа</h3>
+<p><strong>Тип:</strong> Базовый<br>
+<strong>Предусловие:</strong> Пользователь находится на странице выбора варианта оплаты.  </p>
+<p><strong>Шаги:</strong><br>
+1. Нажать на кнопку “Наличные”<br>
+2. Внести наличные в терминал приема наличных денежных средств  </p>
+<p><strong>OP:</strong><br>
+1. На экране отображен номер заказа<br>
+2. Терминал распечатывает талон с номером заказа<br>
+3. Сообщние "Ваш заказ начал готовиться"</p>
+<h3 id="test-case-36"><span class="enumerate-headings-plugin enumerate-heading-plugin">16.3.2</span> Test case 36. Ошибка формирования заказа при отсутствии связи с сервером</h3>
+<p><strong>Тип:</strong> Негативный<br>
+<strong>Предусловие:</strong> Пользователь находится на странице выбора варианта оплаты.  </p>
+<p><strong>Шаги:</strong><br>
+1. Эмулировать потерю соединения с интернетом<br>
+2. Нажать на кнопку “Наличные”<br>
+3. Внести наличные в терминал приема наличных денежных средств  </p>
+<p><strong>OP:</strong><br>
+1. Оплата не выполнена<br>
+2. Появляется сообщение об ошибке: "Не удалось сформировать заказ. Проверьте подключение к интернету"  </p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
