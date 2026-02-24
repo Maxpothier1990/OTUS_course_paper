@@ -436,6 +436,17 @@
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    User Story 07
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
 <a class="md-nav__link md-nav__link--active" href="./">
 <span class="md-ellipsis">
     
@@ -446,6 +457,58 @@
     
   </span>
 </a>
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceptance-criteria-1">
+<span class="md-ellipsis">
+      
+        Acceptance Criteria: 1. При выборе оплаты картой активируется терминал приема наличных средств.
+      
+    </span>
+</a>
+<nav aria-label="Acceptance Criteria: 1. При выборе оплаты картой активируется терминал приема наличных средств." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-30">
+<span class="md-ellipsis">
+      
+        Test case 30. Пересчет суммы заказа при удалении одного товара из корзины
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#acceptance-criteria-2">
+<span class="md-ellipsis">
+      
+        Acceptance Criteria: 2. При ошибке оплаты выводится сообщение, предлагается повторить или выбрать другой способ.
+      
+    </span>
+</a>
+<nav aria-label="Acceptance Criteria: 2. При ошибке оплаты выводится сообщение, предлагается повторить или выбрать другой способ." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-31">
+<span class="md-ellipsis">
+      
+        Test case 31. Ошибка выполнения оплаты при внесении наличных средств
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../US16/">
@@ -534,10 +597,28 @@
 <td>Я как <strong>посетитель</strong> хочу <strong>оплатить заказ наличными</strong>, чтобы <strong>иметь возможность оплатить заказ, если нет других способов оплаты</strong>.</td>
 <td>Высокий</td>
 <td>MVP</td>
-<td>1. При выборе оплаты картой активируется терминал приема наличных средств.<br>2. При успешной оплате заказ создаётся, присваивается номер, печатается талон.<br>3. При ошибке оплаты выводится сообщение, предлагается повторить или выбрать другой способ.<br></td>
+<td>1. При выборе оплаты картой активируется терминал приема наличных средств.<br>2. При ошибке оплаты выводится сообщение, предлагается повторить или выбрать другой способ.<br></td>
 </tr>
 </tbody>
 </table>
+<p><strong>Тест-кейсы:</strong></p>
+<h2 id="acceptance-criteria-1"><span class="enumerate-headings-plugin enumerate-heading-plugin">15.1</span> Acceptance Criteria: 1. При выборе оплаты картой активируется терминал приема наличных средств.</h2>
+<h3 id="test-case-30"><span class="enumerate-headings-plugin enumerate-heading-plugin">15.1.1</span> Test case 30. Пересчет суммы заказа при удалении одного товара из корзины</h3>
+<p><strong>Тип:</strong> Базовый<br>
+<strong>Предусловие:</strong> Пользователь находится на странице выбора варианта оплаты.    </p>
+<p><strong>Шаги:</strong><br>
+1. Нажать на кнопку “Наличные”  </p>
+<p><strong>OP:</strong><br>
+1. Активирован терминал приема наличных денежных средств</p>
+<h2 id="acceptance-criteria-2"><span class="enumerate-headings-plugin enumerate-heading-plugin">15.2</span> Acceptance Criteria: 2. При ошибке оплаты выводится сообщение, предлагается повторить или выбрать другой способ.</h2>
+<h3 id="test-case-31"><span class="enumerate-headings-plugin enumerate-heading-plugin">15.2.1</span> Test case 31. Ошибка выполнения оплаты при внесении наличных средств</h3>
+<p><strong>Тип:</strong> Базовый<br>
+<strong>Предусловие:</strong> Пользователь находится на странице выбора варианта оплаты. Сумма заказа 200.00 руб  </p>
+<p><strong>Шаги:</strong><br>
+1. Нажать на кнопку “Наличные”<br>
+2. Внесены наличные 100 руб.</p>
+<p><strong>OP:</strong><br>
+1. Сообщение "Недостаточно средств. Внести еще или выбрать другой способ оплаты?"</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
