@@ -423,6 +423,37 @@
       
     </span>
 </a>
+<nav aria-label="Acceptance Criteria 1: Отображаются все категории блюд." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-1">
+<span class="md-ellipsis">
+      
+        Test case 1. Ознакомление с товарами в меню
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-2">
+<span class="md-ellipsis">
+      
+        Test case 2. Возврат на страницу "меню"
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-3">
+<span class="md-ellipsis">
+      
+        Test case 3. Попытка открыть страницу "меню" при отсутствии связи с сервером
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#acceptance-criteria-2">
@@ -432,6 +463,19 @@
       
     </span>
 </a>
+<nav aria-label="Acceptance Criteria 2: В каждой категории показаны блюда с названием, ценой, фото и кратким описанием." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-4">
+<span class="md-ellipsis">
+      
+        Test case 4. Ознакомление с категорией блюд "Гамбургеры"
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#acceptance-criteria-3">
@@ -441,6 +485,37 @@
       
     </span>
 </a>
+<nav aria-label="Acceptance Criteria 3: При клике на блюдо открывается детальная карточка с полным составом и возможностью добавления в корзину." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-5">
+<span class="md-ellipsis">
+      
+        Test case 5. Ознакомление с карточкой товара "Гамбургер"
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-6">
+<span class="md-ellipsis">
+      
+        Test case 6. Ознакомление с карточкой товара "Гамбургер"
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-7">
+<span class="md-ellipsis">
+      
+        Test case 7. Ознакомление с карточкой товара из категории подарков
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#acceptance-criteria-4-2">
@@ -450,6 +525,28 @@
       
     </span>
 </a>
+<nav aria-label="Acceptance Criteria 4: Данные меню загружаются не более 2 секунд." class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-8-2">
+<span class="md-ellipsis">
+      
+        Test case 8. Открытие карточки товара менее чем за 2 секунды
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-case-8-2_1">
+<span class="md-ellipsis">
+      
+        Test case 8. Открытие карточки товара менее чем за 2 секунды при значительной нагрузке на сервер
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -573,12 +670,102 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="user-story-01"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.</span> User Story 01</h1>
-<p>| <strong>US01</strong> | Я как <strong>посетитель</strong> хочу <strong>ознакомиться с меню</strong>, чтобы <strong>выбрать подходящее блюдо</strong>. | Высокий | MVP | 1. Отображаются все категории блюд.<br>2. В каждой категории показаны блюда с названием, ценой, фото и кратким описанием.<br>3. При клике на блюдо открывается детальная карточка с полным составом и возможностью добавления в корзину.<br>4. Данные меню загружаются не более 2 секунд. |</p>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>User Story</th>
+<th>Приоритет</th>
+<th>Версия</th>
+<th>Acceptance Criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>US01</strong></td>
+<td>Я как <strong>посетитель</strong> хочу <strong>ознакомиться с меню</strong>, чтобы <strong>выбрать подходящее блюдо</strong>.</td>
+<td>Высокий</td>
+<td>MVP</td>
+<td>1. Отображаются все категории блюд.<br>2. В каждой категории показаны блюда с названием, ценой, фото и кратким описанием.<br>3. При клике на блюдо открывается детальная карточка с полным составом и возможностью добавления в корзину.<br>4. Данные меню загружаются не более 2 секунд.</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Тест-кейсы:</strong></p>
-<h3 id="acceptance-criteria-1"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.0.1</span> Acceptance Criteria 1: Отображаются все категории блюд.</h3>
-<h3 id="acceptance-criteria-2"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.0.2</span> Acceptance Criteria 2: В каждой категории показаны блюда с названием, ценой, фото и кратким описанием.</h3>
-<h3 id="acceptance-criteria-3"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.0.3</span> Acceptance Criteria 3: При клике на блюдо открывается детальная карточка с полным составом и возможностью добавления в корзину.</h3>
-<h3 id="acceptance-criteria-4-2"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.0.4</span> Acceptance Criteria 4: Данные меню загружаются не более 2 секунд.</h3>
+<h2 id="acceptance-criteria-1"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.1</span> Acceptance Criteria 1: Отображаются все категории блюд.</h2>
+<h3 id="test-case-1"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.1.1</span> Test case 1. Ознакомление с товарами в меню</h3>
+<p>Тип: Базовый<br>
+Предусловие: Пользователь находится на стартовой странице  </p>
+<p>Шаги:
+1. Коснуться экрана в любом месте
+2. Прокрутить экран вверх-вниз  </p>
+<p>OP: 
+1. Открыта страница "меню"</p>
+<h3 id="test-case-2"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.1.2</span> Test case 2. Возврат на страницу "меню"</h3>
+<p>Тип: Альтернативный<br>
+Предусловие: Пользователь находится на странице с корзиной  </p>
+<p>Шаги:<br>
+1. Нажать на кнопку "Отмена"  </p>
+<p>OP: 
+1. Открыта страница "меню"</p>
+<h3 id="test-case-3"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.1.3</span> Test case 3. Попытка открыть страницу "меню" при отсутствии связи с сервером</h3>
+<p>Тип: Негативный
+Предусловие: Пользователь находится на стартовой странице  </p>
+<p>Шаги:<br>
+1. Эмулировать потерю соединения с интернетом
+2. Коснуться экрана в любом месте</p>
+<p>OP: 
+1. Появляется сообщение об ошибке: "Не удалось открыть страницу. Проверьте подключение к интернету"</p>
+<h2 id="acceptance-criteria-2"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.2</span> Acceptance Criteria 2: В каждой категории показаны блюда с названием, ценой, фото и кратким описанием.</h2>
+<h3 id="test-case-4"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.2.1</span> Test case 4. Ознакомление с категорией блюд "Гамбургеры"</h3>
+<p>Тип: Базовый<br>
+Предусловие: Пользователь находится на стартовой странице  </p>
+<p>Шаги:
+1. Коснуться экрана в любом месте
+2. Выбрать категорию блюда "Гамбургеры"</p>
+<p>OP: 
+1. Открыта категория блюд "гамбургеры"<br>
+2. На экране отображаются все категории блюда их этой категории</p>
+<h2 id="acceptance-criteria-3"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.3</span> Acceptance Criteria 3: При клике на блюдо открывается детальная карточка с полным составом и возможностью добавления в корзину.</h2>
+<h3 id="test-case-5"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.3.1</span> Test case 5. Ознакомление с карточкой товара "Гамбургер"</h3>
+<p>Тип: Базовый<br>
+Предусловие: Пользователь находится на стартовой странице  </p>
+<p>Шаги:
+1. Коснуться экрана в любом месте
+2. Нажать на товар "Гамбургер" </p>
+<p>OP: 
+1. Открыта карточка товара "Гамбургер"</p>
+<h3 id="test-case-6"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.3.2</span> Test case 6. Ознакомление с карточкой товара "Гамбургер"</h3>
+<p>Тип: Альтернативный<br>
+Предусловие: Пользователь находится на странице с корзиной  </p>
+<p>Шаги:<br>
+1. Нажать на кнопку "Изменить"  </p>
+<p>OP: 
+1. Открыта карточка товара "Гамбургер"</p>
+<h3 id="test-case-7"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.3.3</span> Test case 7. Ознакомление с карточкой товара из категории подарков</h3>
+<p>Тип: Негативный
+Предусловие: Пользователь находится на странице с корзиной. Добавлен акционный товар “Комбо-бургер” и “Акционный стакан”. Количество товара “Гамбургер” = 1 ед., количество товара “Акционный стакан” = 1 ед.</p>
+<p>Шаги:<br>
+1. Нажать на кнопку "Изменить" в строке с товаром “Акционный стакан”</p>
+<p>OP: 
+1. Появляется сообщение: "Детализация доступна только для товаров из меню"</p>
+<h2 id="acceptance-criteria-4-2"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.4</span> Acceptance Criteria 4: Данные меню загружаются не более 2 секунд.</h2>
+<h3 id="test-case-8-2"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.4.1</span> Test case 8. Открытие карточки товара менее чем за 2 секунды</h3>
+<p>Тип: Базовый<br>
+Предусловие: Пользователь находится на стартовой странице  </p>
+<p>Шаги:
+1. Коснуться экрана в любом месте
+2. Нажать на товар "Гамбургер" </p>
+<p>OP: 
+1. Открыта карточка товара "Гамбургер" менее чем за 2 секунды</p>
+<h3 id="test-case-8-2_1"><span class="enumerate-headings-plugin enumerate-heading-plugin">11.4.2</span> Test case 8. Открытие карточки товара менее чем за 2 секунды при значительной нагрузке на сервер</h3>
+<p>Тип: Негативный 
+Предусловие: Пользователь находится на стартовой странице  </p>
+<p>Шаги:<br>
+1. Эмулировать потерю соединения с интернетом
+2. Коснуться экрана в любом месте
+3. Нажать на товар "Гамбургер" </p>
+<p>OP: 
+1. Открыта карточка товара "Гамбургер" более чем за 2 секунды</p>
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
