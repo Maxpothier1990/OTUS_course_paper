@@ -26,6 +26,7 @@ jobs:
           pip install mkdocs-swagger-ui-tag
           pip install mkdocs-build-plantuml-plugin
           pip install mkdocs-enumerate-headings-plugin
+          pip install mkdocstrings[python] mkdocs-material
       
       - name: Build site
         run: mkdocs build
