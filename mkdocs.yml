@@ -17,7 +17,7 @@ theme:
     code: Roboto Mono
   language: ru
   features:
-    #- navigation.instant # Мгновенная загрузка
+    - navigation.instant # Мгновенная загрузка
     - navigation.tracking # Когда отслеживание привязки включено, URL-адрес в адресной строке автоматически обновляется активным привязкой, как выделено в оглавлении. 
     - navigation.expand # Автоматическое открытие подразделов на панели слева
     - navigation.path # Над заголовком каждой страницы отображается путь
