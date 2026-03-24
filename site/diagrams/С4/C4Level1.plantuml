@@ -1,0 +1,26 @@
+@startuml
+!include <C4/C4_Context>
+
+Person(CustumerMenager, "Менеджер по гостипреимству", "Использует приложение для сотрудников")
+Person(ProductMenager, "Менеджер по ассортименту", "Использует приложение для сотрудников")
+Person_Ext(Customer, "Покупатель", "Использует приложение дляпокупателей")
+Person(Cashier, "Кассир", "Использует приложение для сотрудников")
+Person(Worker, "Работник производства", "Использует приложение для сотрудников")
+
+System(restaurant, "Робот и точка", "Система для заказа")
+
+System_Ext(warehouse_system, "Система складского учета", "Автоматизация складских")
+System_Ext(robot_system, "Роботизированный комплекс", "Управление роботами")
+System_Ext(payment_gateway, "Банковская система", "Обработка платежей")
+System_Ext(cash, "Касса", "обработка платежей")
+
+CustumerMenager --> restaurant : имеет доступ к заказам клиентов
+ProductMenager --> restaurant : доступ к настройке меню и тех карт
+Customer --> restaurant : Просматривает товары, оформляет заказы
+Cashier --> restaurant : Оплата
+Worker --> restaurant : Доступ к управлению роботом
+restaurant --> warehouse_system : получает заявку на отгрузку
+restaurant --> robot_system : получает заявку на готовку
+restaurant --> payment_gateway : получает счет на оплату
+restaurant --> cash : получает счет на оплату
+@enduml
