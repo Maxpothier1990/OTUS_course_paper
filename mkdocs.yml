@@ -55,7 +55,9 @@ plugins:
   - bpmn-js
   - search:
       separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
-  - swagger-ui-tag
+  - swagger-ui-tag:
+      background: transparent
+  
   - build_plantuml:
       render: 'server' # or "local" for local rendering
       bin_path: '/usr/local/bin/plantuml' # ignored when render: server
