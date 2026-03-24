@@ -32,6 +32,9 @@ theme:
     - search.suggest # Автозавершение поискового запроса
     - content.code.copy # Кнопка копирования кода
 
+extra_javascript:
+  - js/swagger-fix.js
+
 markdown_extensions:
   - md_in_html
   - admonition
