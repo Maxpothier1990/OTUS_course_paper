@@ -1,203 +1,114 @@
-
-<!doctype html>
-<html lang="ru" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      
-      
-      
-        <link rel="canonical" href="https://maxpothier1990.github.io/OTUS_course_paper/requirements/">
-      
-      
-        <link rel="prev" href="../business%20process/">
-      
-      
-        <link rel="next" href="../model/">
-      
-      
-        
-      
-      
-      <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
-    
-    
-      
-        <title>Требования к системе - OTUS_COURSE_PAPER</title>
-      
-    
-    
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
-      
-        
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
-      
-      
-
-
-    
-    
-      
-    
-    
-      
-        
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-      
-    
-    
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-    
-      
-
-    
-    
-  </head>
-  
-  
-    
-    
-    
-    
-    
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
-  
-    
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" for="__drawer"></label>
-    <div data-md-component="skip">
-      
-        
-        <a href="#_1" class="md-skip">
+<!DOCTYPE html><html class="no-js" lang="ru"><head>
+<meta charset="utf-8">
+<meta content="width=device-width,initial-scale=1" name="viewport">
+<link href="https://maxpothier1990.github.io/OTUS_course_paper/requirements/" rel="canonical">
+<link href="../business%20process/" rel="prev">
+<link href="../model/" rel="next">
+<link href="../assets/images/favicon.png" rel="icon">
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator">
+<title>Требования к системе - OTUS_COURSE_PAPER</title>
+<link href="../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet">
+<link href="../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet">
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: none; }
+            .glightbox-clean .gslide-media { -webkit-box-shadow: none; box-shadow: none; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+<body data-md-color-accent="indigo" data-md-color-primary="teal" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox">
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox">
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#_1">
           Перейти к содержанию
         </a>
-      
-    </div>
-    <div data-md-component="announce">
-      
-    </div>
-    
-    
-      
-
+</div>
+<div data-md-component="announce">
+</div>
 <header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
-    <a href=".." title="OTUS_COURSE_PAPER" class="md-header__button md-logo" aria-label="OTUS_COURSE_PAPER" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
-
-    </a>
-    <label class="md-header__button md-icon" for="__drawer">
-      
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
-    </label>
-    <div class="md-header__title" data-md-component="header-title">
-      <div class="md-header__ellipsis">
-        <div class="md-header__topic">
-          <span class="md-ellipsis">
+<nav aria-label="Верхний колонтитул" class="md-header__inner md-grid">
+<a aria-label="OTUS_COURSE_PAPER" class="md-header__button md-logo" data-md-component="logo" href=".." title="OTUS_COURSE_PAPER">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
             OTUS_COURSE_PAPER
           </span>
-        </div>
-        <div class="md-header__topic" data-md-component="header-topic">
-          <span class="md-ellipsis">
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
             
               Требования к системе
             
           </span>
-        </div>
-      </div>
-    </div>
-    
-      
-    
-    
-    
-    
-      
-      
-        <label class="md-header__button md-icon" for="__search">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        </label>
-        <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Поиск">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
-        </button>
-      </nav>
-      
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Поиск" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Поиск" required="" spellcheck="false" type="text">
+<label class="md-search__icon md-icon" for="__search">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Поиск" class="md-search__options">
+<button aria-label="Очистить" class="md-search__icon md-icon" tabindex="-1" title="Очистить" type="reset">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
             Инициализация поиска
           </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+<ol class="md-search-result__list" role="presentation"></ol>
 </div>
-      
-    
-    
-      <div class="md-header__source">
-        <a href="https://github.com/Maxpothier1990/OTUS_course_paper" title="Перейти к репозиторию" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
-  </div>
-  <div class="md-source__repository">
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/Maxpothier1990/OTUS_course_paper" title="Перейти к репозиторию">
+<div class="md-source__icon md-icon">
+<svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+</div>
+<div class="md-source__repository">
     gorshkov/specification
   </div>
 </a>
-      </div>
-    
-  </nav>
-  
+</div>
+</nav>
 </header>
-    
-    <div class="md-container" data-md-component="container">
-      
-      
-        
-          
-            
-<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href=".." class="md-tabs__link">
+<div class="md-container" data-md-component="container">
+<nav aria-label="Вкладки" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="..">
           
   
   
@@ -206,22 +117,9 @@
   О проекте
 
         </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-  
-  
-    
-    
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../glossary/" class="md-tabs__link">
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../glossary/">
           
   
   
@@ -230,20 +128,9 @@
   Документация
 
         </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../tasks/US1/" class="md-tabs__link">
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../tasks/US1/">
           
   
   
@@ -252,93 +139,38 @@
   Задачи MVP (minimum viable product)
 
         </a>
-      </li>
-    
-  
-
-      
-    </ul>
-  </div>
+</li>
+</ul>
+</div>
 </nav>
-          
-        
-      
-      <main class="md-main" data-md-component="main">
-        <div class="md-main__inner md-grid">
-          
-            
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-
-
-  
-
-
-  
-
-<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Навигация" data-md-level="0">
-  <label class="md-nav__title" for="__drawer">
-    <a href=".." title="OTUS_COURSE_PAPER" class="md-nav__button md-logo" aria-label="OTUS_COURSE_PAPER" data-md-component="logo">
-      
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
-
-    </a>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Навигация" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="OTUS_COURSE_PAPER" class="md-nav__button md-logo" data-md-component="logo" href=".." title="OTUS_COURSE_PAPER">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
     OTUS_COURSE_PAPER
   </label>
-  
-    <div class="md-nav__source">
-      <a href="https://github.com/Maxpothier1990/OTUS_course_paper" title="Перейти к репозиторию" class="md-source" data-md-component="source">
-  <div class="md-source__icon md-icon">
-    
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
-  </div>
-  <div class="md-source__repository">
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/Maxpothier1990/OTUS_course_paper" title="Перейти к репозиторию">
+<div class="md-source__icon md-icon">
+<svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"></path></svg>
+</div>
+<div class="md-source__repository">
     gorshkov/specification
   </div>
 </a>
-    </div>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
-        
-          
-          <div class="md-nav__link md-nav__container">
-            <a href=".." class="md-nav__link ">
-              
-  
-  
-  <span class="md-ellipsis">
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_1" type="checkbox">
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="..">
+<span class="md-ellipsis">
     
   
     О проекте
@@ -346,90 +178,25 @@
 
     
   </span>
-  
-  
-
-            </a>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_1">
-            <span class="md-nav__icon md-icon"></span>
+</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
             
   
     О проекте
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox">
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+<span class="md-ellipsis">
     
   
     Документация
@@ -437,35 +204,21 @@
 
     
   </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
             
   
     Документация
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../glossary/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../glossary/">
+<span class="md-ellipsis">
     
   
     Аббревиатуры и сокращения
@@ -473,27 +226,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../general%20info/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../general%20info/">
+<span class="md-ellipsis">
     
   
     Общие сведения
@@ -501,27 +238,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../goals/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../goals/">
+<span class="md-ellipsis">
     
   
     Назначение и цели создания (развития) системы
@@ -529,27 +250,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../characteristics/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../characteristics/">
+<span class="md-ellipsis">
     
   
     Характеристики объекта автоматизации
@@ -557,27 +262,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../business%20process/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../business%20process/">
+<span class="md-ellipsis">
     
   
     Описание бизнес процессов
@@ -585,36 +274,12 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox">
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
     
   
     Требования к системе
@@ -622,17 +287,10 @@
 
     
   </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
     
   
     Требования к системе
@@ -640,263 +298,193 @@
 
     
   </span>
-  
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
+</a>
+<nav aria-label="Содержание" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
       Содержание
     </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
       
         Требования к системе в целом (Нефункциональные требования)
       
     </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Требования к системе в целом (Нефункциональные требования)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
+</a>
+<nav aria-label="Требования к системе в целом (Нефункциональные требования)" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
       
         Производительность
       
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
       
         Удобство использования
       
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_5">
+<span class="md-ellipsis">
       
         Безопасность
       
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_6">
+<span class="md-ellipsis">
       
         Масштабируемость
       
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_7">
+<span class="md-ellipsis">
       
         Надежность
       
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_8">
+<span class="md-ellipsis">
       
         Совместимость
       
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_9">
+<span class="md-ellipsis">
       
         Доступность
       
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_10" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_10">
+<span class="md-ellipsis">
       
         Хранения данных
       
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_11" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_11">
+<span class="md-ellipsis">
       
         Концептуальная целостность
       
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#_12" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_12">
+<span class="md-ellipsis">
       
         Поддерживаемость
       
     </span>
-  </a>
-  
+</a>
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#_13" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_13">
+<span class="md-ellipsis">
       
         Требования к функциям (задачам), выполняемым системой
       
     </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Требования к функциям (задачам), выполняемым системой">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#user-story-mapping" class="md-nav__link">
-    <span class="md-ellipsis">
+</a>
+<nav aria-label="Требования к функциям (задачам), выполняемым системой" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#user-story-mapping">
+<span class="md-ellipsis">
       
         User Story mapping
       
     </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="User Story mapping">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#definition-of-ready-dor" class="md-nav__link">
-    <span class="md-ellipsis">
+</a>
+<nav aria-label="User Story mapping" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#definition-of-ready-dor">
+<span class="md-ellipsis">
       
         Definition of Ready (DoR) – критерии готовности пользовательской истории к началу разработки:
       
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#definition-of-done-dod" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#definition-of-done-dod">
+<span class="md-ellipsis">
       
         Definition of Done (DoD) – критерии завершённости истории:
       
     </span>
-  </a>
-  
+</a>
 </li>
-        
-      </ul>
-    </nav>
-  
+</ul>
+</nav>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#mvp-minimum-viable-product" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mvp-minimum-viable-product">
+<span class="md-ellipsis">
       
         Функции MVP (Minimum Viable Product)
       
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#2-ver-2" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-ver-2">
+<span class="md-ellipsis">
       
         Функции версии 2 (Ver 2)
       
     </span>
-  </a>
-  
+</a>
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#3-ver-3" class="md-nav__link">
-    <span class="md-ellipsis">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-ver-3">
+<span class="md-ellipsis">
       
         Функции версии 3 (Ver 3)
       
     </span>
-  </a>
-  
+</a>
 </li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
+</ul>
 </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../model/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../model/">
+<span class="md-ellipsis">
     
   
     Информационная модель
@@ -904,27 +492,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../architecture/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../architecture/">
+<span class="md-ellipsis">
     
   
     Компонентная архитектура
@@ -932,27 +504,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../integration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../integration/">
+<span class="md-ellipsis">
     
   
     Модель интеграционного взаимодействия
@@ -960,27 +516,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../uiux/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../uiux/">
+<span class="md-ellipsis">
     
   
     Пользовательский интерфейс приложения
@@ -988,27 +528,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../api/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../api/">
+<span class="md-ellipsis">
     
   
     API приложения
@@ -1016,27 +540,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../reference/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../reference/">
+<span class="md-ellipsis">
     
   
     Ссылки
@@ -1044,72 +552,15 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3" type="checkbox">
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
     
   
     Задачи MVP (minimum viable product)
@@ -1117,35 +568,21 @@
 
     
   </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
             
   
     Задачи MVP (minimum viable product)
   
 
           </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tasks/US1/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../tasks/US1/">
+<span class="md-ellipsis">
     
   
     User Story 01
@@ -1153,27 +590,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tasks/US2/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../tasks/US2/">
+<span class="md-ellipsis">
     
   
     User Story 02
@@ -1181,27 +602,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tasks/US3/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../tasks/US3/">
+<span class="md-ellipsis">
     
   
     User Story 03
@@ -1209,27 +614,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tasks/US4/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../tasks/US4/">
+<span class="md-ellipsis">
     
   
     User Story 04
@@ -1237,27 +626,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tasks/US7/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../tasks/US7/">
+<span class="md-ellipsis">
     
   
     User Story 07
@@ -1265,27 +638,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tasks/US16/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../tasks/US16/">
+<span class="md-ellipsis">
     
   
     User Story 16
@@ -1293,27 +650,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tasks/US19/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../tasks/US19/">
+<span class="md-ellipsis">
     
   
     User Story 19
@@ -1321,27 +662,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tasks/US20/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../tasks/US20/">
+<span class="md-ellipsis">
     
   
     User Story 20
@@ -1349,27 +674,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tasks/US21/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../tasks/US21/">
+<span class="md-ellipsis">
     
   
     User Story 21
@@ -1377,27 +686,11 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tasks/US26/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../tasks/US26/">
+<span class="md-ellipsis">
     
   
     User Story 26
@@ -1405,69 +698,39 @@
 
     
   </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-  </ul>
+</a>
+</li>
+</ul>
 </nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-          
-          
-            <div class="md-content" data-md-component="content">
-              
-                
-
-
-
-
-              
-              <article class="md-content__inner md-typeset">
-                
-                  
-
-
-  
-  
-
-
-<h1 id="_1">Требования к системе</h1>
-<h2 id="_2">Требования к системе в целом (Нефункциональные требования)</h2>
-<h3 id="_3">Производительность</h3>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="_1"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.</span> Требования к системе</h1>
+<h2 id="_2"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.1</span> Требования к системе в целом (Нефункциональные требования)</h2>
+<h3 id="_3"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.1.1</span> Производительность</h3>
 <p><strong><code>NFPER1</code></strong> Система должна обслуживать нем менее 100 пользователей в период пиковой активности с 8:00 до 22:00 по местному времени, со средней продолжительностью сеанса 5 минут.  </p>
 <p><strong><code>NFPER2</code></strong> Все веб-страницы, генерируемые системой, должны полностью загружаться не более чем за 5 секунды после запроса их по интернет-подключению со скоростью 20 Мбит/сек.  </p>
 <p><strong><code>NFPER3</code></strong> Система должна выводить пользователю сообщение о подтверждении в среднем за 3 секунды и не более чем через 6 секунд после того, как пользователь отослал информацию системе. </p>
 <p><strong><code>NFPER4</code></strong> Система должна обрабатывать до 30 новых заказов в минуту в часы пик без деградации времени отклика, указанного в NFPER3.</p>
 <p><strong><code>NFPER5</code></strong> Время отклика системы на любом клиентском интерфейсе при пиковой нагрузке (100 одновременных активных сессий) не должно превышать 2 секунд в 95% запросов.</p>
 <p><strong><code>NFPER6</code></strong> В режиме технического обслуживания система должна позволять завершать текущие транзакции, но блокировать создание новых заказов.</p>
-<h3 id="_4">Удобство использования</h3>
+<h3 id="_4"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.1.2</span> Удобство использования</h3>
 <p><strong><code>NFUS1</code></strong> Покупатель должен иметь возможность оформить первый заказ без помощи персонала не более чем за 3 минуты.</p>
 <p><strong><code>NFUS2</code></strong> 95% пользователей должны успешно завершить ключевые сценарии (поиск блюда, добавление в корзину, оплата) без ошибок.</p>
 <p><strong><code>NFUS3</code></strong> Средний балл по шкале SUS (System Usability Scale) по результатам опроса пользователей клиентского приложения должен быть не менее 75 из 100.</p>
 <p><strong><code>NFUS4</code></strong> Интерфейс кассира в 1С должен блокировать возможность повторного применения скидки или отмены уже оплаченного заказа без двухуровневого подтверждения (вызов менеджера).</p>
-<h3 id="_5">Безопасность</h3>
+<h3 id="_5"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.1.3</span> Безопасность</h3>
 <p><strong><code>NFSEC1</code></strong> Доступ к API должен осуществляться с обязательным использованием JWT-токенов. Должна быть реализована ролевая модель доступа (RBAC) для разделения прав сотрудников.</p>
 <p><strong><code>NFSEC2</code></strong> Все данные, передаваемые между клиентом и сервером, а также между микросервисами, должны шифроваться с использованием TLS 1.2 или выше. Пароли пользователей должны храниться в хэшированном виде (bcrypt).</p>
 <p><strong><code>NFSEC3</code></strong> API Gateway должен обеспечивать защиту от базовых атак (DDoS, подбор паролей, SQL-инъекции).</p>
 <p><strong><code>NFSEC4</code></strong> Доступ к персональным данным покупателей и истории их заказов должен быть строго регламентирован, все действия с данными должны логироваться.</p>
 <p><strong><code>NFSEC5</code></strong> Инфраструктура, обрабатывающая данные банковских карт (сервис оплаты), должна соответствовать требованиям PCI DSS уровня, применимого к используемому платежному шлюзу.</p>
-<h3 id="_6">Масштабируемость</h3>
+<h3 id="_6"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.1.4</span> Масштабируемость</h3>
 <p><strong><code>NFSCAL1</code></strong> Архитектура системы (микросервисы) должна позволять горизонтально масштабировать каждый сервис независимо от других.</p>
 <p><strong><code>NFSCAL2</code></strong> Должна быть предусмотрена возможность увеличения количества партиций в топиках Apache Kafka и шардирования баз данных (например, по датам) для обработки растущего объёма данных.</p>
 <p><strong><code>NFSCAL3</code></strong> Система должна позволять добавлять новые способы оплаты, каналы уведомлений или модули (например, доставку) без изменения кода ядерных сервисов (через плагины или конфигурацию).</p>
@@ -1483,40 +746,40 @@
 <p>Мультитенантность и изоляция: Масштабирование на сеть ресторанов должно подразумевать логическую (или физическую, в зависимости от требований безопасности и регуляторов) изоляцию данных разных точек продаж, но при этом позволять централизованно управлять меню, акциями и ценами (там, где это требуется бизнес-логикой). Архитектура не должна препятствовать ускорению темпов подключения в будущем (например, до 5–10 ресторанов в месяц) без кардинальной перестройки системы.</p>
 </li>
 </ul>
-<h3 id="_7">Надежность</h3>
+<h3 id="_7"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.1.5</span> Надежность</h3>
 <p><strong><code>NFROB1</code></strong> Коэффициент готовности системы (доступность) должен составлять не менее 99,5% в течение календарного месяца.</p>
 <p><strong><code>NFROB2</code></strong> Средняя наработка на отказ (MTBF) для критического бизнес-контура (от создания заказа до его фиксации в БД) должна составлять не менее 720 часов.</p>
 <p><strong><code>NFROB3</code></strong> Критически важные компоненты (API Gateway, сервисы заказов и оплаты, основная база данных) должны быть развернуты в отказоустойчивой конфигурации (минимум 2 экземпляра).</p>
 <p><strong><code>NFROB4</code></strong> Если соединение между пользователем и системой разрывается до подтверждения заказа, система должна позволять восстановить незавершенный заказ и продолжить работу с того же шага.</p>
-<h3 id="_8">Совместимость</h3>
+<h3 id="_8"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.1.6</span> Совместимость</h3>
 <p><strong><code>NFCOM1</code></strong> Клиентские веб-приложения должны корректно работать в последних версиях браузеров Chrome, Firefox, Safari и их мобильных аналогах.</p>
 <p><strong><code>NFCOM2</code></strong> Мобильное приложение должно быть совместимо с актуальными версиями ОС Android и iOS (на момент выхода приложения).</p>
 <p><strong><code>NFCOM3</code></strong> Бэкенд-сервисы должны быть упакованы в Docker-контейнеры, что позволяет разворачивать систему как в облачной инфраструктуре (Yandex Cloud, AWS), так и в локальном дата-центре.</p>
 <p><strong><code>NFCOM4</code></strong> Интеграция с внешними системами (платежные шлюзы, роботизированный комплекс, 1С, ОФД) должна осуществляться через API, предоставляемые этими системами.</p>
-<h3 id="_9">Доступность</h3>
+<h3 id="_9"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.1.7</span> Доступность</h3>
 <p><strong><code>NFAVL1</code></strong> Система должна быть доступна не менее 99,5% времени в течение месяца (с учётом времени планового обслуживания).</p>
 <p><strong><code>NFAVL2</code></strong> Плановое техническое обслуживание (обновление, резервное копирование) не должно приводить к простою более 2 часов в месяц.</p>
 <p><strong><code>NFAVL3</code></strong> Среднее время восстановления системы (MTTR) после сбоя уровня «сервис недоступен» не должно превышать 15 минут.</p>
-<h3 id="_10">Хранения данных</h3>
+<h3 id="_10"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.1.8</span> Хранения данных</h3>
 <p><strong><code>NFDT1</code></strong> Персональные данные пользователей должны храниться не дольше срока, установленного законодательством (152-ФЗ), и удаляться после закрытия учётной записи.</p>
 <p><strong><code>NFDT2</code></strong> Фискальные данные (чеки) должны храниться не менее 5 лет в соответствии с требованиями ФЗ-54.</p>
 <p><strong><code>NFDT3</code></strong> Заказы старше 3 лет должны автоматически перемещаться в архивное (холодное) хранилище для снижения нагрузки на операционные базы данных.</p>
 <p><strong><code>NFDT4</code></strong> Полное резервное копирование всех баз данных должно выполняться ежедневно, инкрементальное — ежечасно.</p>
 <p><strong><code>NFDT5</code></strong> Резервные копии должны храниться в географически распределённом хранилище для обеспечения сохранности при авариях.</p>
-<h3 id="_11">Концептуальная целостность</h3>
+<h3 id="_11"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.1.9</span> Концептуальная целостность</h3>
 <p><strong><code>NFARC1</code></strong> Для синхронного взаимодействия между компонентами системы должен использоваться архитектурный стиль REST. Для асинхронного обмена — событийно-ориентированная архитектура на базе Apache Kafka.</p>
 <p><strong><code>NFARC2</code></strong> Все сервисы должны быть слабосвязанными и взаимодействовать через единую точку входа — API Gateway.</p>
 <p><strong><code>NFARC3</code></strong> Каждый микросервис должен быть независимым и иметь собственную базу данных (если требуется). </p>
-<h3 id="_12">Поддерживаемость</h3>
+<h3 id="_12"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.1.10</span> Поддерживаемость</h3>
 <p><strong><code>NFSUP1</code></strong> Система должна логировать действия пользователей, критические события и ошибки. Доступ к логам должен предоставляться через графический интерфейс с возможностью фильтрации и поиска.</p>
 <p><strong><code>NFSUP2</code></strong> Должен быть обеспечен мониторинг производительности и состояния сервисов в реальном времени (дашборды, алерты).</p>
 <p><strong><code>NFSUP3</code></strong> Время развертывания новой версии одного микросервиса (включая rolling update) не должно превышать 10 минут.</p>
 <p><strong><code>NFSUP4</code></strong> Код должен соответствовать принятым стандартам кодстайла, уровень покрытия unit-тестами критической бизнес-логики — не менее 80%.</p>
 <p><strong><code>NFSUP5</code></strong> Вся конфигурация (подключения к внешним системам, параметры) должна выноситься в централизованное хранилище (Config Server, Vault), а не храниться внутри образов контейнеров.</p>
-<h2 id="_13">Требования к функциям (задачам), выполняемым системой</h2>
-<h3 id="user-story-mapping">User Story mapping</h3>
+<h2 id="_13"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.2</span> Требования к функциям (задачам), выполняемым системой</h2>
+<h3 id="user-story-mapping"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.2.1</span> User Story mapping</h3>
 <p>Основные функции системы представлены в виде [<a href="https://app.holst.so/share/b/88076e88-4e70-47f7-8d50-dead7810f132">User story mapping</a>]</p>
-<h4 id="definition-of-ready-dor">Definition of Ready (DoR) – критерии готовности пользовательской истории к началу разработки:</h4>
+<h4 id="definition-of-ready-dor"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.2.1.1</span> Definition of Ready (DoR) – критерии готовности пользовательской истории к началу разработки:</h4>
 <ul>
 <li>История оценена командой (story points/часы).</li>
 <li>Чётко сформулированы Acceptance Criteria.</li>
@@ -1524,7 +787,7 @@
 <li>История согласована с заказчиком/продукт-оунером.</li>
 <li>Макет/дизайн (если требуется) утверждён и доступен.</li>
 </ul>
-<h4 id="definition-of-done-dod">Definition of Done (DoD) – критерии завершённости истории:</h4>
+<h4 id="definition-of-done-dod"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.2.1.2</span> Definition of Done (DoD) – критерии завершённости истории:</h4>
 <ul>
 <li>Код написан, отревьюван и слит в основную ветку.</li>
 <li>Написаны автоматические тесты (unit/integration) с покрытием не менее 80% для новой логики.</li>
@@ -1533,7 +796,7 @@
 <li>История развёрнута на тестовом стенде и принята заказчиком/тестировщиком.</li>
 <li>Отсутствуют критические и высокие дефекты.</li>
 </ul>
-<h3 id="mvp-minimum-viable-product">Функции MVP (Minimum Viable Product)</h3>
+<h3 id="mvp-minimum-viable-product"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.2.2</span> Функции MVP (Minimum Viable Product)</h3>
 <table>
 <thead>
 <tr>
@@ -1617,7 +880,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="2-ver-2">Функции версии 2 (Ver 2)</h3>
+<h3 id="2-ver-2"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.2.3</span> Функции версии 2 (Ver 2)</h3>
 <table>
 <thead>
 <tr>
@@ -1687,7 +950,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="3-ver-3">Функции версии 3 (Ver 3)</h3>
+<h3 id="3-ver-3"><span class="enumerate-headings-plugin enumerate-heading-plugin">5.2.4</span> Функции версии 3 (Ver 3)</h3>
 <table>
 <thead>
 <tr>
@@ -1785,110 +1048,68 @@
 </tr>
 </tbody>
 </table>
-<hr />
+<hr>
 <blockquote>
 <p><strong>Примечание:</strong> Приведённые User Story охватывают все уникальные сценарии из предоставленного материала. DoR и DoD являются общими для всех историй и применяются ко всем задачам в рамках разработки. Acceptance Criteria для каждой истории конкретизируют условия успешной реализации.</p>
 </blockquote>
-
-
-
-
-
-
-
-
-
-
-
-
-                
-              </article>
-            </div>
-          
-          
+</article>
+</div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
-        </div>
-        
-          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
   К началу
 </button>
-        
-      </main>
-      
-        <footer class="md-footer">
-  
-    
-      
-      <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
-        
-          
-          <a href="../business%20process/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Описание бизнес процессов">
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-            </div>
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
+</main>
+<footer class="md-footer">
+<nav aria-label="Нижний колонтитул" class="md-footer__inner md-grid">
+<a aria-label="Назад: Описание бизнес процессов" class="md-footer__link md-footer__link--prev" href="../business%20process/">
+<div class="md-footer__button md-icon">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
                 Назад
               </span>
-              <div class="md-ellipsis">
+<div class="md-ellipsis">
                 Описание бизнес процессов
               </div>
-            </div>
-          </a>
-        
-        
-          
-          <a href="../model/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Информационная модель">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
+</div>
+</a>
+<a aria-label="Вперед: Информационная модель" class="md-footer__link md-footer__link--next" href="../model/">
+<div class="md-footer__title">
+<span class="md-footer__direction">
                 Вперед
               </span>
-              <div class="md-ellipsis">
+<div class="md-ellipsis">
                 Информационная модель
               </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
-        
-      </nav>
-    
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-copyright">
+</div>
+<div class="md-footer__button md-icon">
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
   
   
     Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
       Material for MkDocs
     </a>
-  
 </div>
-      
-    </div>
-  </div>
+</div>
+</div>
 </footer>
-      
-    </div>
-    <div class="md-dialog" data-md-component="dialog">
-      <div class="md-dialog__inner md-typeset"></div>
-    </div>
-    
-    
-    
-      
-      
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.expand", "navigation.path", "navigation.top", "navigation.footer", "navigation.tabs", "navigation.indexes", "toc.integrate", "toc.follow", "search.highlight", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
-    
-    
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
-      
-    
-  </body>
-</html>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.expand", "navigation.path", "navigation.top", "navigation.footer", "navigation.tabs", "navigation.indexes", "toc.integrate", "toc.follow", "search.highlight", "search.suggest", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+<script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
